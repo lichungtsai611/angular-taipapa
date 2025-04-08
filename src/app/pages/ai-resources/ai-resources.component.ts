@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-ai-resources',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './ai-resources.component.html',
   styleUrl: './ai-resources.component.scss'
 })

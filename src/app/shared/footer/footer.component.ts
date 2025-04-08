@@ -13,8 +13,7 @@ export class FooterComponent {
   currentYear = new Date().getFullYear();
   contactInfo = {
     phone: '0937-358-433',
-    email: 'taipapa.ai@gmail.com',
-    address: '台北市大安區復興南路一段1號'
+    email: 'taipapa.ai@gmail.com'
   };
   
   navItems = [

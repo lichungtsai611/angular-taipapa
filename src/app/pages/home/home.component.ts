@@ -38,6 +38,8 @@ interface TeamMember {
 interface Partner {
   name: string;
   logo: string;
+  type: string;
+  link?: string;
 }
 
 @Component({
@@ -147,42 +149,60 @@ export class HomeComponent implements OnInit {
   ];
   
   // 合作夥伴
-  partners = [
+  partners: Partner[] = [
     {
       name: '國立臺灣大學',
-      logo: 'assets/partners/國立臺灣大學.png'
+      logo: 'assets/partners/國立臺灣大學.png',
+      type: 'academic',
+      link: 'https://www.ntu.edu.tw/'
     },
     {
       name: '臺北醫學大學',
-      logo: 'assets/partners/臺北醫學大學.png'
+      logo: 'assets/partners/臺北醫學大學.png',
+      type: 'academic',
+      link: 'https://www.tmu.edu.tw/'
     },
     {
       name: '國立政治大學',
-      logo: 'assets/partners/國立政治大學.png'
+      logo: 'assets/partners/國立政治大學.png',
+      type: 'academic',
+      link: 'https://www.nccu.edu.tw/'
     },
     {
       name: '健行科技大學',
-      logo: 'assets/partners/健行科技大學.png'
+      logo: 'assets/partners/健行科技大學.png',
+      type: 'academic',
+      link: 'https://www.uch.edu.tw/'
     },
     {
       name: '台北市立大學',
-      logo: 'assets/partners/台北市立大學.jpg'
+      logo: 'assets/partners/台北市立大學.jpg',
+      type: 'academic',
+      link: 'https://www.utaipei.edu.tw/'
     },
     {
       name: '新北市政府',
-      logo: 'assets/partners/新北市政府.png'
+      logo: 'assets/partners/新北市政府.png',
+      type: 'government',
+      link: 'https://www.ntpc.gov.tw/'
     },
     {
       name: '宜蘭縣政府',
-      logo: 'assets/partners/宜蘭縣政府.png'
+      logo: 'assets/partners/宜蘭縣政府.png',
+      type: 'government',
+      link: 'https://www.e-land.gov.tw/'
     },
     {
       name: '台南市政府',
-      logo: 'assets/partners/台南市政府.png'
+      logo: 'assets/partners/台南市政府.png',
+      type: 'government',
+      link: 'https://www.tainan.gov.tw/'
     },
     {
       name: '中華民國勞動部',
-      logo: 'assets/partners/中華民國勞動部.png'
+      logo: 'assets/partners/中華民國勞動部.png',
+      type: 'government',
+      link: 'https://www.mol.gov.tw/'
     }
   ];
   
@@ -206,8 +226,45 @@ export class HomeComponent implements OnInit {
     }
   ];
 
+  // 篩選後的合作夥伴
+  filteredPartners: Partner[] = [];
+  currentFilter: string = 'all';
+  
   ngOnInit() {
     // 初始化元件邏輯
+    this.filteredPartners = [...this.partners];
+  }
+
+  // 篩選合作夥伴
+  filterPartners(type: string) {
+    this.currentFilter = type;
+    if (type === 'all') {
+      this.filteredPartners = [...this.partners];
+    } else {
+      this.filteredPartners = this.partners.filter(partner => partner.type === type);
+    }
+    
+    // 更新活動按鈕樣式
+    setTimeout(() => {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn instanceof HTMLElement && btn.textContent?.includes(this.getFilterButtonText(type))) {
+          btn.classList.add('active');
+        }
+      });
+    }, 0);
+  }
+  
+  // 獲取篩選按鈕文字
+  private getFilterButtonText(type: string): string {
+    switch (type) {
+      case 'all': return '所有合作夥伴';
+      case 'academic': return '學術機構';
+      case 'government': return '政府單位';
+      case 'industry': return '企業合作';
+      default: return '';
+    }
   }
 
   getCourseIcon(category: string): string {

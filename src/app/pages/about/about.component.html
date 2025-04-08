@@ -1,30 +1,161 @@
 <section class="about-section">
   <div class="container">
     <h1 class="page-title">關於我們</h1>
+    <p class="page-subtitle">成立於 {{ foundedYear }} 年，致力於推動台灣 AI 教育與實務應用</p>
     
-    <div class="mission-container">
-      <h2>協會使命</h2>
-      <p class="mission-statement">{{ missionStatement }}</p>
+    <!-- 協會宗旨 -->
+    <div class="purpose-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">gavel</span>
+        </div>
+        <h2>協會宗旨</h2>
+        <div class="header-underline"></div>
+      </div>
+      <div class="purpose-content">
+        <p class="purpose-statement">{{ purpose }}</p>
+      </div>
     </div>
     
-    <div class="vision-container">
-      <h2>我們的願景</h2>
-      <ul class="vision-list">
-        @for (point of visionPoints; track point) {
-          <li>{{ point }}</li>
-        }
-      </ul>
-    </div>
-    
-    <div class="contact-container">
-      <h2>聯絡資訊</h2>
-      <div class="contact-info">
-        <p><strong>電話：</strong> {{ contactInfo.phone }}</p>
-        <p><strong>電子郵件：</strong> {{ contactInfo.email }}</p>
+    <!-- 協會任務 -->
+    <div class="tasks-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">assignment</span>
+        </div>
+        <h2>協會任務</h2>
+        <div class="header-underline"></div>
       </div>
       
-      <div class="contact-cta">
-        <a href="https://line.me/ti/p/~" target="_blank" class="btn btn-line">加入 LINE 好友</a>
+      <div class="tasks-content">
+        <ul class="tasks-list">
+          @for (task of tasks; track task; let i = $index) {
+            <li>
+              <span class="task-number">{{ i + 1 }}</span>
+              <span class="task-text">{{ task }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 核心價值 -->
+    <div class="values-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">star</span>
+        </div>
+        <h2>核心價值</h2>
+        <div class="header-underline"></div>
+      </div>
+      
+      <div class="values-grid">
+        @for (value of coreValues; track value.title) {
+          <div class="value-card">
+            <div class="value-icon">
+              <span class="material-icons">{{ value.icon }}</span>
+            </div>
+            <h3>{{ value.title }}</h3>
+            <p>{{ value.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+    
+    <!-- 我們的願景 -->
+    <div class="vision-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">visibility</span>
+        </div>
+        <h2>我們的願景</h2>
+        <div class="header-underline"></div>
+      </div>
+      
+      <div class="vision-content">
+        <ul class="vision-list">
+          @for (point of visionPoints; track point) {
+            <li>
+              <span class="vision-bullet"></span>
+              <span class="vision-text">{{ point }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 核心團隊 -->
+    <div class="team-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">groups</span>
+        </div>
+        <h2>核心團隊</h2>
+        <div class="header-underline"></div>
+      </div>
+      
+      <div class="team-grid">
+        @for (member of teamMembers; track member.name) {
+          <div class="team-member">
+            <div class="member-photo">
+              <img [src]="member.photo" [alt]="member.name" onerror="this.src='assets/images/default-avatar.jpg'">
+              <div class="member-overlay">
+                <div class="member-title">{{ member.title }}</div>
+              </div>
+            </div>
+            <h3 class="member-name">{{ member.name }}</h3>
+            <p class="member-background">{{ member.background }}</p>
+          </div>
+        }
+      </div>
+    </div>
+    
+    <!-- 聯絡資訊 -->
+    <div class="contact-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">contact_mail</span>
+        </div>
+        <h2>聯絡我們</h2>
+        <div class="header-underline"></div>
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="material-icons">phone</span>
+            <p>{{ contactInfo.phone }}</p>
+          </div>
+          
+          <div class="contact-item">
+            <span class="material-icons">email</span>
+            <p>{{ contactInfo.email }}</p>
+          </div>
+          
+          <div class="contact-item">
+            <span class="material-icons">location_on</span>
+            <p>{{ contactInfo.address }}</p>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <a [href]="contactInfo.social.facebook" target="_blank" class="social-link facebook">
+            <span class="material-icons">facebook</span>
+          </a>
+          <a [href]="contactInfo.social.linkedin" target="_blank" class="social-link linkedin">
+            <span class="material-icons">launch</span>
+          </a>
+          <a [href]="contactInfo.social.youtube" target="_blank" class="social-link youtube">
+            <span class="material-icons">smart_display</span>
+          </a>
+        </div>
+        
+        <div class="contact-cta">
+          <a href="https://line.me/ti/p/~" target="_blank" class="btn-line">
+            <span class="line-icon">LINE</span>
+            加入 LINE 好友
+          </a>
+        </div>
       </div>
     </div>
   </div>

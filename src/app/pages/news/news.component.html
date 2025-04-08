@@ -2,6 +2,10 @@
   <div class="container">
     <h1 class="page-title">最新課程</h1>
     
+    <p class="section-intro">
+      以下是我們即將舉辦的課程，內容涵蓋 AI 基礎知識、實務應用與產業趨勢，歡迎報名參加。
+    </p>
+    
     <!-- 課程列表 -->
     <div class="courses-list-container">
       <div class="courses-list">
@@ -14,6 +18,11 @@
             <div class="course-org">
               <span class="org-badge">{{course.organization}}</span>
             </div>
+            <ul class="course-description">
+              <li *ngFor="let item of course.description">
+                {{item}}
+              </li>
+            </ul>
           </div>
         </div>
       </div>

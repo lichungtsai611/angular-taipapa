@@ -172,7 +172,6 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   padding: 28px;
-  border-top: 4px solid var(--primary-blue);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -183,7 +182,9 @@
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border-top-color: var(--accent-green);
+    background-image: 
+      linear-gradient(to bottom, #ffffff, #f5f7fd),
+      repeating-linear-gradient(45deg, rgba(var(--primary-blue-rgb), 0.04) 0px, rgba(var(--primary-blue-rgb), 0.04) 2px, transparent 2px, transparent 10px);
     
     .course-icon {
       transform: scale(1.1);
@@ -380,21 +381,13 @@
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    background-image: 
+      linear-gradient(to bottom, white, #f0f4ff),
+      repeating-linear-gradient(135deg, rgba(var(--accent-blue-rgb), 0.03) 0px, rgba(var(--accent-blue-rgb), 0.03) 2px, transparent 2px, transparent 10px);
     
     .plan-icon {
       transform: rotateY(360deg);
     }
-  }
-  
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
-    z-index: -1;
   }
 }
 

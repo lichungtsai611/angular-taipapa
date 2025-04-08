@@ -102,8 +102,19 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // 初始化課程數據
-    this.allCourses = [...this.newsCourses];
+    // 初始化時按日期排序課程
+    this.allCourses = this.getSortedCourses();
+  }
+
+  /**
+   * 獲取按日期排序的課程
+   */
+  private getSortedCourses(): Course[] {
+    return [...this.newsCourses].sort((a, b) => {
+      const dateA = this.parseChineseDate(a.date);
+      const dateB = this.parseChineseDate(b.date);
+      return dateA.getTime() - dateB.getTime();
+    });
   }
 
   /**

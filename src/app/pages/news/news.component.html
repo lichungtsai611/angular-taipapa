@@ -2,19 +2,17 @@
   <div class="container">
     <h1 class="page-title">最新課程</h1>
     
-    <!-- 課程時間軸列表 -->
-    <div class="timeline-container">
-      <div class="courses-timeline">
-        <div class="timeline-item" *ngFor="let course of allCourses">
-          <div class="timeline-date">
-            <div class="date-chip">{{course.date}}</div>
+    <!-- 課程列表 -->
+    <div class="courses-list-container">
+      <div class="courses-list">
+        <div class="course-item" *ngFor="let course of allCourses">
+          <div class="course-date">
+            <span>{{course.date}}</span>
           </div>
-          <div class="timeline-content">
-            <div class="course-card">
-              <h3 class="course-title">{{course.title}}</h3>
-              <div class="course-org">
-                <span class="org-badge">{{course.organization}}</span>
-              </div>
+          <div class="course-content">
+            <h3 class="course-title">{{course.title}}</h3>
+            <div class="course-org">
+              <span class="org-badge">{{course.organization}}</span>
             </div>
           </div>
         </div>

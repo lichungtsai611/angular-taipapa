@@ -4,128 +4,39 @@
     
     <p class="section-intro">探索各種實用的 AI 工具，提升工作效率並簡化複雜流程。從內容創作、設計到數據分析，這些工具將協助您快速掌握 AI 的應用價值。</p>
     
-    <div class="resources-header">
-      <div class="header-icon">
-        <span class="material-icons">apps</span>
-      </div>
-      <h2>熱門 AI 工具</h2>
-      <div class="header-underline"></div>
+    <div class="categories-container">
+      <button 
+        class="category-btn" 
+        [class.active]="selectedCategory === '所有工具'"
+        (click)="selectCategory('所有工具')">
+        所有工具
+      </button>
+      <button 
+        *ngFor="let category of categories"
+        class="category-btn" 
+        [class.active]="selectedCategory === category"
+        (click)="selectCategory(category)">
+        {{ category }}
+      </button>
     </div>
     
     <div class="tools-grid">
-      @for (tool of aiTools; track tool.name) {
-        <div class="tool-card">
-          <div class="tool-image-container">
-            <img [src]="tool.icon" [alt]="tool.name + ' 圖示'" onerror="this.src='assets/images/default-icon.png'">
-            <div class="tool-overlay">
-              <a [href]="tool.link" target="_blank" class="tool-link">
-                <span class="material-icons">launch</span>
-              </a>
-            </div>
+      <div class="tool-card" *ngFor="let tool of filteredTools">
+        <div class="tool-image">
+          <img [src]="tool.image" [alt]="tool.name">
+        </div>
+        <div class="tool-content">
+          <h3 class="tool-name">{{ tool.name }}</h3>
+          <p class="tool-description">{{ tool.description }}</p>
+          <div class="tool-features">
+            <span class="feature-tag" *ngFor="let feature of tool.features">
+              {{ feature }}
+            </span>
           </div>
-          
-          <div class="tool-content">
-            <h3 class="tool-name">{{ tool.name }}</h3>
-            <p class="tool-description">{{ tool.description }}</p>
-            
-            <div class="tool-usecases">
-              <div class="usecase-header">
-                <span class="material-icons">check_circle</span>
-                <h4>主要應用場景</h4>
-              </div>
-              <ul class="usecase-list">
-                @for (useCase of tool.useCases.split('、'); track useCase) {
-                  <li>
-                    <div class="usecase-bullet"></div>
-                    {{ useCase }}
-                  </li>
-                }
-              </ul>
-            </div>
-            
-            <a [href]="tool.link" target="_blank" class="btn-explore">
-              前往探索
-              <span class="material-icons">arrow_forward</span>
-            </a>
-          </div>
-        </div>
-      }
-    </div>
-    
-    <div class="resources-categories">
-      <div class="category-item">
-        <div class="category-icon">
-          <span class="material-icons">edit</span>
-        </div>
-        <h3>內容創作類</h3>
-        <p>幫助您生成、編輯和優化各種形式的內容，包括文字、圖像和影片。</p>
-      </div>
-      
-      <div class="category-item">
-        <div class="category-icon">
-          <span class="material-icons">analytics</span>
-        </div>
-        <h3>數據分析類</h3>
-        <p>協助您處理和分析複雜數據，獲取有價值的洞察和預測。</p>
-      </div>
-      
-      <div class="category-item">
-        <div class="category-icon">
-          <span class="material-icons">brush</span>
-        </div>
-        <h3>設計創意類</h3>
-        <p>激發創意靈感，輔助設計過程，生成專業水準的視覺作品。</p>
-      </div>
-      
-      <div class="category-item">
-        <div class="category-icon">
-          <span class="material-icons">smart_toy</span>
-        </div>
-        <h3>自動化工具</h3>
-        <p>自動處理重複性任務，提高工作效率，節省寶貴時間。</p>
-      </div>
-    </div>
-    
-    <div class="resources-guide">
-      <div class="guide-header">
-        <div class="guide-icon">
-          <span class="material-icons">tips_and_updates</span>
-        </div>
-        <h2>選擇適合的 AI 工具</h2>
-        <div class="guide-underline"></div>
-      </div>
-      
-      <div class="guide-content">
-        <div class="guide-step">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>確定您的需求</h3>
-            <p>思考您要解決的問題和目標，明確需要 AI 工具提供何種協助。</p>
-          </div>
-        </div>
-        
-        <div class="guide-step">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3>考慮使用門檻</h3>
-            <p>評估您的技術能力，選擇符合您技能水平的工具，有些工具更適合初學者。</p>
-          </div>
-        </div>
-        
-        <div class="guide-step">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>比較功能與價格</h3>
-            <p>比較不同工具的功能特點和價格方案，找到最符合成本效益的選擇。</p>
-          </div>
-        </div>
-        
-        <div class="guide-step">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <h3>嘗試與學習</h3>
-            <p>多數 AI 工具提供免費試用，大膽嘗試並持續學習如何更有效地使用它們。</p>
-          </div>
+          <a [href]="tool.link" target="_blank" class="tool-link">
+            立即使用
+            <span class="material-icons">arrow_forward</span>
+          </a>
         </div>
       </div>
     </div>
@@ -133,7 +44,7 @@
     <div class="resources-note">
       <h3>想深入學習如何活用這些 AI 工具？</h3>
       <p>參加我們的 AI 工具實務工作坊，由專業講師帶領您掌握各種 AI 應用技巧，開啟無限可能！</p>
-      <a href="/courses" class="btn-workshop">
+      <a routerLink="/courses" class="btn-workshop">
         查看相關課程
         <span class="material-icons">school</span>
       </a>

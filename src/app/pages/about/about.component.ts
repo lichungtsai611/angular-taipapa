@@ -86,22 +86,22 @@ export class AboutComponent {
   
   teamMembers = [
     {
-      name: '王大明',
+      name: '蔡立忠',
       title: '理事長',
-      background: '擁有20年IT產業經驗，曾任多家科技公司高階主管',
-      photo: 'assets/images/team/member1.jpg'
+      background: '資深軟體工程師，專注於AI技術應用與系統開發',
+      photo: 'assets/teams/Richard.webp'
     },
     {
-      name: '李美玲',
+      name: '黃海潮',
       title: '副理事長',
-      background: 'AI研究學者，專注於機器學習與自然語言處理領域',
-      photo: 'assets/images/team/member2.jpg'
+      background: '資深產品經理，擅長AI解決方案規劃與專案管理',
+      photo: 'assets/teams/Eric.webp'
     },
     {
-      name: '張志豪',
+      name: '廖文碩',
       title: '秘書長',
-      background: '資深創業者，曾成功創立兩家AI相關新創公司',
-      photo: 'assets/images/team/member3.jpg'
+      background: '資深技術顧問，專精於AI技術整合與企業轉型',
+      photo: 'assets/teams/Kevin.webp'
     }
   ];
   

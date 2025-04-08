@@ -1,55 +1,226 @@
-<section class="hero">
+<section class="hero-section">
   <div class="container">
     <div class="hero-content">
-      <h1>台灣人工智慧實務應用推廣協會</h1>
-      <p class="mission">{{ missionStatement }}</p>
+      <h1 class="main-title">{{ heroSection.title }}</h1>
+      <h2 class="sub-title">{{ heroSection.subtitle }}</h2>
+      <p class="description">{{ heroSection.description }}</p>
       <div class="cta-buttons">
-        <a routerLink="/courses" class="btn btn-primary">瀏覽課程</a>
-        <a routerLink="/about" class="btn btn-secondary">了解更多</a>
+        <a routerLink="/courses" class="btn-primary">
+          瀏覽課程
+          <span class="material-icons">school</span>
+        </a>
+        <a routerLink="/about" class="btn-secondary">
+          了解更多
+          <span class="material-icons">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-animation">
+      <div class="animation-element element-1"></div>
+      <div class="animation-element element-2"></div>
+      <div class="animation-element element-3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="vision-section">
+  <div class="container">
+    <h2 class="section-title">我們的使命</h2>
+    <div class="section-subtitle">共同創造 AI 驅動的智慧未來</div>
+
+    <div class="vision-grid">
+      <div class="vision-card" *ngFor="let item of visionValues; let i = index">
+        <div class="card-number">{{ i + 1 }}</div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="featured-courses">
+<section class="courses-section">
   <div class="container">
-    <h2 class="section-title">主要課程服務</h2>
+    <h2 class="section-title">精選課程</h2>
+    <div class="section-subtitle">提升您的 AI 技能與知識</div>
+
     <div class="courses-grid">
-      @for (course of featuredCourses; track course.title) {
-        <div class="course-card">
-          <div class="course-image">
-            <img [src]="course.image" [alt]="course.title">
+      <div class="course-card" *ngFor="let course of featuredCourses">
+        <div class="course-image">
+          <div class="animated-pattern">
+            <div class="shape-1"></div>
+            <div class="shape-2"></div>
+            <div class="category-icon" [attr.data-icon]="getCourseIcon(course.category)"></div>
           </div>
-          <div class="course-content">
-            <h3>{{ course.title }}</h3>
-            <p>{{ course.description }}</p>
+          <div class="course-category">{{ course.category }}</div>
+        </div>
+        <div class="course-content">
+          <h3 class="course-title">{{ course.title }}</h3>
+          <p class="course-description">{{ course.description }}</p>
+          <div class="course-details">
+            <div class="detail-item">
+              <span class="material-icons">schedule</span>
+              <span>{{ course.duration }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="material-icons">people</span>
+              <span>{{ course.target || course.audience }}</span>
+            </div>
           </div>
         </div>
-      }
-    </div>
-  </div>
-</section>
-
-<section class="latest-course">
-  <div class="container">
-    <h2 class="section-title">最新課程</h2>
-    <div class="event-card">
-      <h3>{{ latestCourse.title }}</h3>
-      <div class="event-details">
-        <p><strong>日期：</strong> {{ latestCourse.date }}</p>
-        <p><strong>地點：</strong> {{ latestCourse.location }}</p>
       </div>
-      <a [href]="latestCourse.registerLink" class="btn btn-accent">立即報名</a>
+    </div>
+
+    <div class="section-action">
+      <a routerLink="/courses" class="btn-outline">
+        查看所有課程
+        <span class="material-icons">arrow_forward</span>
+      </a>
     </div>
   </div>
 </section>
 
-<section class="contact-section">
+<section class="tools-section">
   <div class="container">
-    <h2 class="section-title">聯絡我們</h2>
-    <div class="contact-content">
-      <p>想了解更多資訊或有任何問題，歡迎聯絡我們</p>
-      <a href="https://line.me/ti/p/~" target="_blank" class="btn btn-line">加入 LINE 好友</a>
+    <h2 class="section-title">AI 工具資源</h2>
+    <div class="section-subtitle">精選實用的 AI 工具，提升工作效率</div>
+
+    <div class="tools-grid">
+      <div class="tool-card" *ngFor="let tool of aiTools">
+        <div class="tool-image">
+          <img [src]="tool.image" [alt]="tool.name">
+        </div>
+        <div class="tool-content">
+          <div class="tool-category">{{ tool.category }}</div>
+          <h3 class="tool-name">{{ tool.name }}</h3>
+          <p class="tool-description">{{ tool.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-action">
+      <a routerLink="/ai-resources" class="btn-outline">
+        探索更多工具
+        <span class="material-icons">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="news-section">
+  <div class="container">
+    <h2 class="section-title">最新消息</h2>
+    <div class="section-subtitle">掌握 AI 最新趨勢與活動資訊</div>
+
+    <div class="news-grid">
+      <div class="news-card" *ngFor="let news of latestNews">
+        <div class="news-image">
+          <div class="animated-news">
+            <div class="pulse-circle"></div>
+            <div class="news-icon" [attr.data-icon]="getNewsIcon(news.title)"></div>
+            <div class="animated-line line-1"></div>
+            <div class="animated-line line-2"></div>
+            <div class="animated-line line-3"></div>
+          </div>
+          <div class="news-date">{{ news.date | date:'yyyy/MM/dd' }}</div>
+        </div>
+        <div class="news-content">
+          <div class="news-organization" *ngIf="news.organization">{{ news.organization }}</div>
+          <h3 class="news-title">{{ news.title }}</h3>
+          <p class="news-summary">{{ news.summary }}</p>
+          <a [routerLink]="news.link" class="news-link">
+            閱讀更多
+            <span class="material-icons">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-action">
+      <a routerLink="/news" class="btn-outline">
+        查看所有消息
+        <span class="material-icons">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="container">
+    <h2 class="section-title">核心團隊</h2>
+    <div class="section-subtitle">專業且富有熱情的領導團隊</div>
+
+    <div class="team-grid">
+      <div class="team-card" *ngFor="let member of teamMembers">
+        <div class="member-photo">
+          <img [src]="member.photo" [alt]="member.name">
+        </div>
+        <h3 class="member-name">{{ member.name }}</h3>
+        <div class="member-title">{{ member.title }}</div>
+      </div>
+    </div>
+
+    <div class="section-action">
+      <a routerLink="/about" class="btn-outline">
+        認識完整團隊
+        <span class="material-icons">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="partners-section">
+  <div class="container">
+    <h2 class="section-title">信任合作夥伴</h2>
+    <p class="section-subtitle">攜手產官學研各界，共同推動 AI 技術在台灣的落地應用</p>
+    
+    <div class="partners-container">
+      <div class="partners-grid">
+        <div *ngFor="let partner of partners" class="partner-card">
+          <div class="partner-logo-container">
+            <img [src]="partner.logo" [alt]="partner.name + '標誌'" class="partner-logo">
+            <div class="partner-overlay">
+              <span class="material-icons">verified</span>
+            </div>
+          </div>
+          <h3 class="partner-name">{{ partner.name }}</h3>
+        </div>
+      </div>
+
+      <div class="partners-description">
+        <div class="partners-stats">
+          <div class="stat-item">
+            <span class="stat-number">{{ partners.length }}+</span>
+            <span class="stat-label">合作夥伴</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">12+</span>
+            <span class="stat-label">培訓項目</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3000+</span>
+            <span class="stat-label">培訓人數</span>
+          </div>
+        </div>
+        <p class="partners-text">
+          我們與各領域頂尖機構建立長期合作關係，共同開發AI培訓課程、舉辦研討會與工作坊，推動技術創新與人才培育。合作內容包括客製化企業培訓、學術研究合作、產學媒合等多元形式。
+        </p>
+        <a routerLink="/about" class="partners-link">
+          了解更多合作方式 <span class="material-icons">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>準備好開始您的 AI 學習之旅了嗎？</h2>
+      <p>無論您是初學者還是專業人士，我們都有適合您的課程和資源</p>
+      <div class="cta-buttons">
+        <a routerLink="/courses" class="btn-primary">瀏覽課程</a>
+        <a routerLink="/about" class="btn-secondary">聯絡我們</a>
+      </div>
     </div>
   </div>
 </section>

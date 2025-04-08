@@ -1,15 +1,22 @@
-<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+<svg width="150" height="40" viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0054A6" />
       <stop offset="100%" stop-color="#37C871" />
     </linearGradient>
   </defs>
-  <path d="M12 8 L12 32 L22 32 L22 28 L16 28 L16 8 L12 8 Z" fill="url(#logoGradient)" />
-  <path d="M26 8 L26 32 L38 32 L38 28 L30 28 L30 22 L36 22 L36 18 L30 18 L30 12 L38 12 L38 8 L26 8 Z" fill="url(#logoGradient)" />
-  <path d="M44 8 L50 32 L54 32 L58 16 L62 32 L66 32 L72 8 L68 8 L64 24 L60 8 L56 8 L52 24 L48 8 L44 8 Z" fill="url(#logoGradient)" />
-  <path d="M76 8 L76 12 L84 12 L84 32 L88 32 L88 12 L96 12 L96 8 L76 8 Z" fill="url(#logoGradient)" />
-  <circle cx="104" cy="10" r="4" fill="#0054A6" />
-  <circle cx="104" cy="20" r="4" fill="#37C871" />
-  <circle cx="104" cy="30" r="4" fill="#0054A6" />
+  <!-- T -->
+  <path d="M10 8 L28 8 L28 12 L22 12 L22 32 L16 32 L16 12 L10 12 Z" fill="url(#logoGradient)" />
+  <!-- A -->
+  <path d="M29 32 L35 8 L41 8 L47 32 L41 32 L40 27 L36 27 L35 32 L29 32 Z M37 22 L39 22 L38 15 Z" fill="url(#logoGradient)" />
+  <!-- I -->
+  <path d="M49 8 L55 8 L55 32 L49 32 Z" fill="url(#logoGradient)" />
+  <!-- P -->
+  <path d="M57 8 L69 8 C71 8 72.5 8.5 73.5 9.5 C74.5 10.5 75 12 75 14 C75 16 74.5 17.5 73.5 18.5 C72.5 19.5 71 20 69 20 L63 20 L63 32 L57 32 Z M63 12 L63 16 L68 16 C68.5 16 69 15.8 69.3 15.4 C69.6 15 69.8 14.5 69.8 14 C69.8 13.5 69.6 13 69.3 12.6 C69 12.2 68.5 12 68 12 Z" fill="url(#logoGradient)" />
+  <!-- A -->
+  <path d="M77 32 L83 8 L89 8 L95 32 L89 32 L88 27 L84 27 L83 32 L77 32 Z M85 22 L87 22 L86 15 Z" fill="url(#logoGradient)" />
+  <!-- P -->
+  <path d="M97 8 L109 8 C111 8 112.5 8.5 113.5 9.5 C114.5 10.5 115 12 115 14 C115 16 114.5 17.5 113.5 18.5 C112.5 19.5 111 20 109 20 L103 20 L103 32 L97 32 Z M103 12 L103 16 L108 16 C108.5 16 109 15.8 109.3 15.4 C109.6 15 109.8 14.5 109.8 14 C109.8 13.5 109.6 13 109.3 12.6 C109 12.2 108.5 12 108 12 Z" fill="url(#logoGradient)" />
+  <!-- A -->
+  <path d="M117 32 L123 8 L129 8 L135 32 L129 32 L128 27 L124 27 L123 32 L117 32 Z M125 22 L127 22 L126 15 Z" fill="url(#logoGradient)" />
 </svg> 

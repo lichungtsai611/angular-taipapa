@@ -887,18 +887,6 @@
         opacity: 1;
       }
     }
-    
-    &[data-type="academic"] {
-      border-left: 4px solid var(--accent-green);
-    }
-    
-    &[data-type="government"] {
-      border-left: 4px solid var(--primary-blue);
-    }
-    
-    &[data-type="industry"] {
-      border-left: 4px solid var(--accent-orange);
-    }
   }
 }
 

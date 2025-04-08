@@ -174,28 +174,7 @@
     <h2 class="section-title">合作夥伴</h2>
     <p class="section-subtitle">我們與各大專院校及機構攜手合作，共同推廣AI臺灣發展</p>
 
-    <div class="partner-filter">
-      <button class="filter-btn active" (click)="filterPartners('all')">所有合作夥伴</button>
-      <button class="filter-btn" (click)="filterPartners('academic')">學術機構</button>
-      <button class="filter-btn" (click)="filterPartners('government')">政府單位</button>
-    </div>
-
     <div class="partners-container">
-      <div class="partners-grid">
-        <div class="partner-card" *ngFor="let partner of filteredPartners" [attr.data-type]="partner.type">
-          <div class="partner-logo-container">
-            <img [src]="partner.logo" [alt]="partner.name" class="partner-logo">
-            <div class="partner-overlay">
-              <a [href]="partner.link" target="_blank" rel="noopener noreferrer" class="partner-link-icon">
-                <span class="material-icons">link</span>
-              </a>
-            </div>
-          </div>
-          <p class="partner-name">{{ partner.name }}</p>
-          <span class="partner-type">{{ partner.type === 'academic' ? '學術機構' : '政府單位' }}</span>
-        </div>
-      </div>
-
       <div class="partners-description">
         <div class="partners-stats">
           <div class="stat-item">

@@ -8,6 +8,21 @@
       @for (category of allCourseCategories; track category.title) {
         <div class="category-container">
           <div class="category-header">
+            <div class="category-icon-wrapper">
+              @if (category.title === 'AI工具基礎課程') {
+                <span class="material-icons">build</span>
+              } @else if (category.title === 'AI趨勢分析') {
+                <span class="material-icons">trending_up</span>
+              } @else if (category.title === 'AI網頁設計') {
+                <span class="material-icons">desktop_mac</span>
+              } @else if (category.title === 'AI數據行銷') {
+                <span class="material-icons">campaign</span>
+              } @else if (category.title === 'AI簡報設計') {
+                <span class="material-icons">slideshow</span>
+              } @else {
+                <span class="material-icons">school</span>
+              }
+            </div>
             <h2>{{ category.title }}</h2>
             <p>{{ category.description }}</p>
           </div>
@@ -15,6 +30,31 @@
           <div class="course-list">
             @for (course of category.courses; track course.title) {
               <div class="course-item">
+                <div class="course-icon">
+                  @if (course.title.includes('ChatGPT')) {
+                    <span class="material-icons">chat</span>
+                  } @else if (course.title.includes('Midjourney')) {
+                    <span class="material-icons">image</span>
+                  } @else if (course.title.includes('趨勢')) {
+                    <span class="material-icons">insights</span>
+                  } @else if (course.title.includes('轉型')) {
+                    <span class="material-icons">transform</span>
+                  } @else if (course.title.includes('UX/UI')) {
+                    <span class="material-icons">design_services</span>
+                  } @else if (course.title.includes('前端')) {
+                    <span class="material-icons">code</span>
+                  } @else if (course.title.includes('行銷')) {
+                    <span class="material-icons">campaign</span>
+                  } @else if (course.title.includes('數據分析')) {
+                    <span class="material-icons">analytics</span>
+                  } @else if (course.title.includes('簡報')) {
+                    <span class="material-icons">slideshow</span>
+                  } @else if (course.title.includes('視覺化')) {
+                    <span class="material-icons">bar_chart</span>
+                  } @else {
+                    <span class="material-icons">school</span>
+                  }
+                </div>
                 <h3>{{ course.title }}</h3>
                 <ul class="course-details">
                   <li><span class="material-icons">schedule</span> <strong>時長：</strong> 2-6小時</li>

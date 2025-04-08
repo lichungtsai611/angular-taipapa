@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+interface Course {
+  title: string;
+  organization: string;
+  date: string;
+}
+
 @Component({
   selector: 'app-news',
   standalone: true,
@@ -10,9 +16,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './news.component.scss'
 })
 export class NewsComponent implements OnInit {
-  allCourses: any[] = [];
+  allCourses: Course[] = [];
   
-  newsCourses = [
+  newsCourses: Course[] = [
     {
       title: '實用統計模型',
       organization: 'NTUDAC',
@@ -70,21 +76,27 @@ export class NewsComponent implements OnInit {
     }
   ];
 
-  // 依照日期排序
-  sortedCourses = [...this.newsCourses].sort((a, b) => {
-    const dateA = new Date(a.date.replace(/年|月|日/g, '-'));
-    const dateB = new Date(b.date.replace(/年|月|日/g, '-'));
-    return dateA.getTime() - dateB.getTime();
-  });
+  /**
+   * 依照日期從近到遠排序課程
+   */
+  get sortedCourses(): Course[] {
+    return [...this.allCourses].sort((a, b) => {
+      const dateA = this.parseChineseDate(a.date);
+      const dateB = this.parseChineseDate(b.date);
+      return dateA.getTime() - dateB.getTime();
+    });
+  }
 
-  // 過濾近期課程（未來3個月）
-  get upcomingCourses() {
+  /**
+   * 獲取未來3個月內的課程
+   */
+  get upcomingCourses(): Course[] {
     const today = new Date();
     const threeMonthsLater = new Date();
     threeMonthsLater.setMonth(today.getMonth() + 3);
     
     return this.sortedCourses.filter(course => {
-      const courseDate = new Date(course.date.replace(/年|月|日/g, '-'));
+      const courseDate = this.parseChineseDate(course.date);
       return courseDate >= today && courseDate <= threeMonthsLater;
     });
   }
@@ -92,5 +104,23 @@ export class NewsComponent implements OnInit {
   ngOnInit(): void {
     // 初始化課程數據
     this.allCourses = [...this.newsCourses];
+  }
+
+  /**
+   * 解析中文日期格式 (例如: "2025年5月8日") 為 Date 對象
+   */
+  private parseChineseDate(dateString: string): Date {
+    const cleanedDate = dateString.replace(/年|月|日/g, '-');
+    const dateParts = cleanedDate.split('-').filter(part => part.trim() !== '');
+    
+    if (dateParts.length >= 3) {
+      const year = parseInt(dateParts[0]);
+      const month = parseInt(dateParts[1]) - 1; // JavaScript 月份從 0 開始
+      const day = parseInt(dateParts[2]);
+      
+      return new Date(year, month, day);
+    }
+    
+    return new Date(); // 如果解析失敗，返回當前日期
   }
 }

@@ -2,15 +2,53 @@
   <div class="container">
     <h1 class="page-title">最新課程</h1>
     
-    <!-- 課程列表 -->
-    <div class="row">
-      <div class="col-md-6 mb-4" *ngFor="let course of allCourses">
-        <div class="card h-100">
+    <!-- 課程時間軸列表 -->
+    <div class="timeline-container">
+      <div class="courses-timeline">
+        <div class="timeline-item" *ngFor="let course of allCourses">
+          <div class="timeline-date">
+            <div class="date-chip">{{course.date}}</div>
+          </div>
+          <div class="timeline-content">
+            <div class="course-card">
+              <h3 class="course-title">{{course.title}}</h3>
+              <div class="course-org">
+                <span class="org-badge">{{course.organization}}</span>
+              </div>
+              <div class="course-actions">
+                <a href="#" class="btn-details">了解詳情</a>
+                <button class="btn-reminder">
+                  <i class="reminder-icon">🔔</i> 
+                  <span>提醒我</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 近期熱門課程 -->
+    <div class="featured-courses">
+      <h2 class="section-title">近期熱門課程</h2>
+      <div class="featured-grid">
+        <div class="featured-card" *ngFor="let course of upcomingCourses.slice(0, 3)">
+          <div class="card-header">
+            <span class="course-tag">熱門</span>
+            <h3>{{course.title}}</h3>
+          </div>
           <div class="card-body">
-            <h5 class="card-title">{{course.title}}</h5>
-            <p class="card-text">講師: {{course.organization}}</p>
-            <p class="card-text">日期: {{course.date}}</p>
-            <a href="#" class="btn btn-primary">查看詳情</a>
+            <div class="course-info">
+              <div class="info-item">
+                <span class="info-label">主辦單位</span>
+                <span class="info-value">{{course.organization}}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">課程日期</span>
+                <span class="info-value">{{course.date}}</span>
+              </div>
+            </div>
+            <a href="#" class="btn-primary">立即報名</a>
           </div>
         </div>
       </div>
@@ -18,7 +56,9 @@
     
     <div class="courses-note">
       <p>想了解更多課程資訊，歡迎加入 LINE 官方帳號獲取最新消息。</p>
-      <a href="https://line.me/ti/p/~" target="_blank" class="btn btn-line">加入 LINE 好友</a>
+      <a href="https://line.me/ti/p/~" target="_blank" class="btn-line">
+        <i class="line-icon">LINE</i> 加入 LINE 好友
+      </a>
     </div>
   </div>
 </section>

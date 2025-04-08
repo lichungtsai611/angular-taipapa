@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="page-title">課程服務</h1>
     
-    <p class="section-intro">我們提供多元的AI課程，從基礎入門到專業認證，滿足不同需求。</p>
+    <p class="section-intro">我們提供多元的AI課程，從基礎工具應用到專業領域應用，滿足各種學習需求。</p>
     
     <div class="search-container">
       <div class="search-input-group">
@@ -10,9 +10,11 @@
           type="text" 
           [(ngModel)]="searchKeyword" 
           placeholder="搜尋課程..." 
-          class="form-control search-input"
+          class="search-input"
           (input)="onSearch()">
-        <button type="button" class="btn btn-primary search-button" (click)="onSearch()">搜尋</button>
+        <button type="button" class="search-button" (click)="onSearch()">
+          <span class="material-icons">search</span>
+        </button>
       </div>
     </div>
     
@@ -34,11 +36,11 @@
                 <div class="course-item">
                   <h3>{{ course.title }}</h3>
                   <ul class="course-details">
-                    <li><strong>時長：</strong> {{ course.duration }}</li>
-                    <li><strong>適合對象：</strong> {{ course.target }}</li>
-                    <li><strong>費用：</strong> {{ course.price }}</li>
+                    <li><span class="material-icons">schedule</span> <strong>時長：</strong> {{ course.duration }}</li>
+                    <li><span class="material-icons">group</span> <strong>適合對象：</strong> {{ course.target }}</li>
+                    <li><span class="material-icons">paid</span> <strong>費用：</strong> {{ course.price }}</li>
                   </ul>
-                  <a href="#" class="btn btn-primary">了解更多</a>
+                  <a href="#" class="btn-course-more">了解更多</a>
                 </div>
               }
             </div>
@@ -47,10 +49,47 @@
       }
     </div>
     
-    <div class="custom-training">
-      <h2>客製化企業培訓</h2>
-      <p>我們也提供依據企業需求量身打造的AI培訓方案，歡迎企業洽詢。</p>
-      <a href="https://line.me/ti/p/~" target="_blank" class="btn btn-secondary">聯絡我們</a>
+    <div class="course-plans-section">
+      <div class="section-header">
+        <div class="icon-container">
+          <span class="material-icons">lightbulb</span>
+        </div>
+        <h2 class="section-title">精選課程方案</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <p class="plans-intro">依據您的需求選擇最適合的課程方案，從個人進修到企業培訓，我們都能提供專業且客製化的服務</p>
+      
+      <div class="course-plans">
+        @for (plan of coursePlans; track plan.title) {
+          <div class="plan-card">
+            <div class="plan-icon">
+              <span class="material-icons">{{ plan.icon }}</span>
+            </div>
+            <h3 class="plan-title">{{ plan.title }}</h3>
+            <p class="plan-description">{{ plan.description }}</p>
+            
+            <ul class="plan-features">
+              @for (feature of plan.features; track feature) {
+                <li>
+                  <span class="feature-bullet"></span>
+                  {{ feature }}
+                </li>
+              }
+            </ul>
+            
+            <a href="#" class="btn-learn-more">了解更多</a>
+          </div>
+        }
+      </div>
+    </div>
+    
+    <div class="contact-section">
+      <h2>需要更多客製化課程方案？</h2>
+      <p>歡迎聯絡我們，我們將根據您的需求提供最合適的解決方案</p>
+      <a href="https://line.me/ti/p/~" target="_blank" class="btn-contact">
+        <span class="line-icon">LINE</span> 聯絡我們
+      </a>
     </div>
   </div>
 </section>

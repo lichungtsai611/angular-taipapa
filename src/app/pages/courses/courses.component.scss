@@ -1,6 +1,7 @@
 .courses-section {
   padding: var(--spacing-xl) 0;
   background-color: #f9fafc;
+  background-image: linear-gradient(135deg, #f9fafc 0%, #eef2f9 100%);
 }
 
 .container {
@@ -15,34 +16,43 @@
   text-align: center;
   margin-bottom: var(--spacing-md);
   position: relative;
+  animation: fadeInDown 0.8s ease-out;
 }
 
 .page-title:after {
   content: '';
   display: block;
-  width: 60px;
+  width: 80px;
   height: 4px;
   background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
   margin: 16px auto 0;
   border-radius: 2px;
+  animation: widthGrow 1s ease-out forwards;
+  transform-origin: center;
 }
 
 .section-intro {
   text-align: center;
-  max-width: 800px;
   margin: 0 auto var(--spacing-xl);
   color: var(--gray-700);
   font-size: 1.1rem;
   line-height: 1.6;
+  animation: fadeIn 1s ease-out;
 }
 
 /* 課程類別 */
 .course-categories {
   margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--spacing-lg);
 }
 
 .category-container {
   margin-bottom: 50px;
+  width: 100%;
+  animation: fadeIn 0.8s ease-out;
   
   &:last-child {
     margin-bottom: 0;
@@ -50,13 +60,14 @@
 }
 
 .category-header {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  text-align: center;
   
   h2 {
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--primary-blue);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     position: relative;
     display: inline-block;
     
@@ -64,11 +75,14 @@
       content: '';
       position: absolute;
       bottom: -5px;
-      left: 0;
-      width: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
       height: 3px;
       background-color: var(--accent-green);
       border-radius: 2px;
+      animation: widthGrow 0.6s ease-out forwards;
+      transform-origin: center;
     }
   }
   
@@ -80,22 +94,31 @@
 
 .course-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
 }
 
 .course-item {
   background-color: white;
+  background-image: linear-gradient(to bottom, #ffffff, #fcfcff);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-  padding: 25px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 28px;
   border-top: 4px solid var(--primary-blue);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
   
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-top-color: var(--accent-green);
   }
   
   h3 {
@@ -104,19 +127,26 @@
     color: var(--dark-blue);
     margin-bottom: 15px;
     line-height: 1.4;
+    text-align: center;
   }
 }
 
 .course-details {
   list-style: none;
   padding: 0;
-  margin: 0 0 15px;
+  margin: 0 0 20px;
   
   li {
     display: flex;
     align-items: center;
     margin-bottom: 12px;
     color: var(--gray-700);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateX(5px);
+      color: var(--primary-blue);
+    }
     
     .material-icons {
       font-size: 1.1rem;
@@ -136,32 +166,55 @@
   line-height: 1.6;
   font-size: 0.95rem;
   margin: 0;
+  flex-grow: 1;
+  text-align: justify;
+  position: relative;
+  padding-top: 5px;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue), transparent);
+    opacity: 0.6;
+  }
 }
 
 /* 課程方案區塊 */
 .course-plans-section {
   margin-bottom: 60px;
   padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #f9fafc, #f5f8ff);
+  padding: 60px var(--spacing-lg) 40px;
 }
 
 .section-header {
   text-align: center;
   margin-bottom: 30px;
   position: relative;
+  width: 100%;
+  animation: fadeIn 0.8s ease-out;
   
   .icon-container {
-    width: 60px;
-    height: 60px;
-    background-color: var(--primary-blue);
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 15px;
+    margin: 0 auto 20px;
     color: white;
+    animation: pulseScale 2s infinite;
     
     .material-icons {
-      font-size: 28px;
+      font-size: 32px;
     }
   }
   
@@ -173,42 +226,57 @@
   }
   
   .title-underline {
-    width: 60px;
+    width: 80px;
     height: 3px;
     background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
     margin: 0 auto;
     border-radius: 2px;
+    animation: widthGrow 0.8s ease-out forwards;
   }
 }
 
 .plans-intro {
   text-align: center;
-  max-width: 800px;
   margin: 0 auto 40px;
   color: var(--gray-700);
   font-size: 1.05rem;
   line-height: 1.6;
+  animation: fadeIn 1s ease-out;
 }
 
 .course-plans {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
+  justify-content: center;
+  width: 100%;
 }
 
 .plan-card {
   background-color: white;
+  background-image: linear-gradient(to bottom, white, #fafbff);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-  padding: 30px;
-  transition: all 0.3s ease;
+  padding: 35px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
   
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    
+    .plan-icon {
+      transform: rotateY(360deg);
+    }
   }
   
   &:before {
@@ -224,18 +292,19 @@
 }
 
 .plan-icon {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   background: linear-gradient(135deg, rgba(var(--primary-blue-rgb), 0.1), rgba(var(--accent-blue-rgb), 0.1));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: var(--primary-blue);
+  transition: all 0.6s ease;
   
   .material-icons {
-    font-size: 32px;
+    font-size: 36px;
   }
 }
 
@@ -244,6 +313,19 @@
   font-weight: 600;
   color: var(--dark-blue);
   margin-bottom: 15px;
+  position: relative;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+    border-radius: 2px;
+  }
 }
 
 .plan-description {
@@ -256,12 +338,20 @@
   list-style: none;
   padding: 0;
   margin: 0 0 30px;
+  width: 100%;
   
   li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 12px;
     color: var(--gray-700);
+    text-align: left;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateX(5px);
+      color: var(--primary-blue);
+    }
     
     .feature-bullet {
       width: 6px;
@@ -269,6 +359,7 @@
       background-color: var(--primary-blue);
       border-radius: 50%;
       margin-right: 10px;
+      margin-top: 8px;
       flex-shrink: 0;
     }
   }
@@ -276,39 +367,60 @@
 
 .btn-learn-more {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 28px;
   background: linear-gradient(45deg, var(--primary-blue), var(--accent-blue));
   color: white;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.4s ease;
+  }
   
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(var(--primary-blue-rgb), 0.3);
+    
+    &:before {
+      left: 100%;
+    }
   }
 }
 
 /* 聯絡區塊 */
 .contact-section {
   background-color: white;
+  background-image: linear-gradient(135deg, white, #f8faff);
   border-radius: 15px;
-  padding: 40px;
+  padding: 50px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-out;
   
   h2 {
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--dark-blue);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   
   p {
     color: var(--gray-700);
-    margin-bottom: 25px;
-    max-width: 600px;
+    margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
     font-size: 1.05rem;
@@ -317,31 +429,104 @@
   .btn-contact {
     display: inline-flex;
     align-items: center;
-    padding: 12px 30px;
+    padding: 14px 36px;
     background-color: #06C755;
     color: white;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: all 0.4s ease;
+    }
     
     &:hover {
       background-color: #05a548;
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(6, 199, 85, 0.3);
+      
+      &:before {
+        left: 100%;
+      }
     }
     
     .line-icon {
       font-weight: 700;
-      margin-right: 8px;
+      margin-right: 10px;
     }
+  }
+}
+
+/* 動畫關鍵幀 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes widthGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+@keyframes pulseScale {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(var(--primary-blue-rgb), 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(var(--primary-blue-rgb), 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(var(--primary-blue-rgb), 0);
   }
 }
 
 /* 響應式設計 */
 @media (max-width: 991px) {
   .course-list {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
   
   .course-plans {
@@ -359,11 +544,15 @@
   }
   
   .course-item {
-    padding: 20px;
+    padding: 22px;
+  }
+  
+  .plan-card {
+    padding: 30px 25px;
   }
   
   .contact-section {
-    padding: 30px 20px;
+    padding: 40px 30px;
   }
 }
 

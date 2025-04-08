@@ -6,7 +6,7 @@ interface Course {
   title: string;
   duration: string;
   target: string;
-  price: string;
+  price: string;  // 保留在介面中，但不在 UI 中顯示
 }
 
 interface CourseCategory {
@@ -30,8 +30,6 @@ interface CoursePlan {
   styleUrl: './courses.component.scss'
 })
 export class CoursesComponent {
-  searchKeyword: string = '';
-  
   // 課程類別
   allCourseCategories: CourseCategory[] = [
     {
@@ -126,8 +124,6 @@ export class CoursesComponent {
     }
   ];
   
-  courseCategories: CourseCategory[] = this.allCourseCategories;
-  
   // 課程方案
   coursePlans: CoursePlan[] = [
     {
@@ -167,31 +163,4 @@ export class CoursesComponent {
       ]
     }
   ];
-
-  onSearch(): void {
-    if (!this.searchKeyword.trim()) {
-      this.courseCategories = this.allCourseCategories;
-      return;
-    }
-
-    const keyword = this.searchKeyword.toLowerCase().trim();
-    
-    this.courseCategories = this.allCourseCategories
-      .map(category => {
-        const filteredCourses = category.courses.filter(course => 
-          course.title.toLowerCase().includes(keyword) || 
-          course.target.toLowerCase().includes(keyword)
-        );
-        
-        if (filteredCourses.length === 0) {
-          return null;
-        }
-        
-        return {
-          ...category,
-          courses: filteredCourses
-        };
-      })
-      .filter((category): category is CourseCategory => category !== null);
-  }
 }

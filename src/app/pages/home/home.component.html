@@ -174,32 +174,26 @@
     <h2 class="section-title">合作夥伴</h2>
     <p class="section-subtitle">我們與各大專院校及機構攜手合作，共同推廣AI臺灣發展</p>
 
+    <div class="partner-filter">
+      <button class="filter-btn active" (click)="filterPartners('all')">所有合作夥伴</button>
+      <button class="filter-btn" (click)="filterPartners('academic')">學術機構</button>
+      <button class="filter-btn" (click)="filterPartners('government')">政府單位</button>
+    </div>
+
     <div class="partners-container">
-      <div class="partners-description">
-        <div class="partners-stats">
-          <div class="stat-item">
-            <span class="stat-number">20+</span>
-            <span class="stat-label">學術合作夥伴</span>
+      <div class="partners-grid">
+        <div class="partner-card" *ngFor="let partner of filteredPartners" [attr.data-type]="partner.type">
+          <div class="partner-logo-container">
+            <img [src]="partner.logo" [alt]="partner.name" class="partner-logo">
+            <div class="partner-overlay">
+              <a [href]="partner.link" target="_blank" rel="noopener noreferrer" class="partner-link-icon">
+                <span class="material-icons">link</span>
+              </a>
+            </div>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">50+</span>
-            <span class="stat-label">合作項目</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">100+</span>
-            <span class="stat-label">培訓計劃</span>
-          </div>
+          <p class="partner-name">{{ partner.name }}</p>
+          <span class="partner-type">{{ partner.type === 'academic' ? '學術機構' : '政府單位' }}</span>
         </div>
-        <p class="partners-text">
-          我們與台灣各地頂尖學府及機構緊密合作，共同開發AI教育資源，培育未來人才。透過產學合作模式，我們致力於將前沿AI技術與教育實踐相結合，為台灣AI生態系統建立堅實基礎。
-        </p>
-        <p class="partners-text">
-          無論您是學術機構、企業還是政府單位，我們都歡迎您加入我們的合作網絡，一同推動台灣AI教育與應用的發展。
-        </p>
-        <a href="#contact" class="partners-link">
-          了解如何成為合作夥伴
-          <span class="material-icons">arrow_forward</span>
-        </a>
       </div>
     </div>
   </div>

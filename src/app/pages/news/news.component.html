@@ -21,31 +21,6 @@
       </div>
     </div>
     
-    <!-- 近期熱門課程 -->
-    <div class="featured-courses">
-      <h2 class="section-title">近期熱門課程</h2>
-      <div class="featured-grid">
-        <div class="featured-card" *ngFor="let course of upcomingCourses.slice(0, 3)">
-          <div class="card-header">
-            <span class="course-tag">熱門</span>
-            <h3>{{course.title}}</h3>
-          </div>
-          <div class="card-body">
-            <div class="course-info">
-              <div class="info-item">
-                <span class="info-label">主辦單位</span>
-                <span class="info-value">{{course.organization}}</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">課程日期</span>
-                <span class="info-value">{{course.date}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
     <div class="courses-note">
       <p>想了解更多課程資訊，歡迎加入 LINE 官方帳號獲取最新消息。</p>
       <a href="https://line.me/ti/p/~" target="_blank" class="btn-line">

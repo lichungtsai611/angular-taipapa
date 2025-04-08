@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a routerLink="/">
+        <h1>台灣人工智慧實務應用推廣協會</h1>
+      </a>
+    </div>
+    
+    <nav class="main-nav">
+      <ul>
+        @for (item of navItems; track item.path) {
+          <li>
+            <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: item.path === '/'}">
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+    
+    <div class="contact-btn">
+      <a href="https://line.me/ti/p/~" target="_blank" class="line-btn">聯絡我們</a>
+    </div>
+  </div>
+</header>

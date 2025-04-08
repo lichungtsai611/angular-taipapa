@@ -1,0 +1,31 @@
+<section class="about-section">
+  <div class="container">
+    <h1 class="page-title">關於我們</h1>
+    
+    <div class="mission-container">
+      <h2>協會使命</h2>
+      <p class="mission-statement">{{ missionStatement }}</p>
+    </div>
+    
+    <div class="vision-container">
+      <h2>我們的願景</h2>
+      <ul class="vision-list">
+        @for (point of visionPoints; track point) {
+          <li>{{ point }}</li>
+        }
+      </ul>
+    </div>
+    
+    <div class="contact-container">
+      <h2>聯絡資訊</h2>
+      <div class="contact-info">
+        <p><strong>電話：</strong> {{ contactInfo.phone }}</p>
+        <p><strong>電子郵件：</strong> {{ contactInfo.email }}</p>
+      </div>
+      
+      <div class="contact-cta">
+        <a href="https://line.me/ti/p/~" target="_blank" class="btn btn-line">加入 LINE 好友</a>
+      </div>
+    </div>
+  </div>
+</section>

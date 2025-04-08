@@ -1,0 +1,56 @@
+<section class="courses-section">
+  <div class="container">
+    <h1 class="page-title">課程服務</h1>
+    
+    <p class="section-intro">我們提供多元的AI課程，從基礎入門到專業認證，滿足不同需求。</p>
+    
+    <div class="search-container">
+      <div class="search-input-group">
+        <input 
+          type="text" 
+          [(ngModel)]="searchKeyword" 
+          placeholder="搜尋課程..." 
+          class="form-control search-input"
+          (input)="onSearch()">
+        <button type="button" class="btn btn-primary search-button" (click)="onSearch()">搜尋</button>
+      </div>
+    </div>
+    
+    <div class="course-categories">
+      @if (courseCategories.length === 0) {
+        <div class="no-results">
+          <p>找不到符合「{{ searchKeyword }}」的課程</p>
+        </div>
+      } @else {
+        @for (category of courseCategories; track category.title) {
+          <div class="category-container">
+            <div class="category-header">
+              <h2>{{ category.title }}</h2>
+              <p>{{ category.description }}</p>
+            </div>
+            
+            <div class="course-list">
+              @for (course of category.courses; track course.title) {
+                <div class="course-item">
+                  <h3>{{ course.title }}</h3>
+                  <ul class="course-details">
+                    <li><strong>時長：</strong> {{ course.duration }}</li>
+                    <li><strong>適合對象：</strong> {{ course.target }}</li>
+                    <li><strong>費用：</strong> {{ course.price }}</li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">了解更多</a>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      }
+    </div>
+    
+    <div class="custom-training">
+      <h2>客製化企業培訓</h2>
+      <p>我們也提供依據企業需求量身打造的AI培訓方案，歡迎企業洽詢。</p>
+      <a href="https://line.me/ti/p/~" target="_blank" class="btn btn-secondary">聯絡我們</a>
+    </div>
+  </div>
+</section>

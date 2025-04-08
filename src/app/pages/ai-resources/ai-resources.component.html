@@ -1,0 +1,37 @@
+<section class="ai-resources-section">
+  <div class="container">
+    <h1 class="page-title">AI資源</h1>
+    
+    <p class="section-intro">以下是一些常見且實用的AI工具，可應用於不同場景提升工作效率。</p>
+    
+    <div class="tools-grid">
+      @for (tool of aiTools; track tool.name) {
+        <div class="tool-card">
+          <div class="tool-header">
+            <div class="tool-icon">
+              <img [src]="tool.icon" [alt]="tool.name + ' 圖示'" onerror="this.src='assets/images/default-icon.png'">
+            </div>
+            <h2>{{ tool.name }}</h2>
+          </div>
+          
+          <div class="tool-content">
+            <p class="tool-description">{{ tool.description }}</p>
+            
+            <div class="tool-details">
+              <h3>主要用途</h3>
+              <p>{{ tool.useCases }}</p>
+            </div>
+            
+            <a [href]="tool.link" target="_blank" class="btn btn-primary">前往使用</a>
+          </div>
+        </div>
+      }
+    </div>
+    
+    <div class="resources-note">
+      <h3>想了解如何有效使用這些工具？</h3>
+      <p>參加我們的 AI 工具實務工作坊，由專業講師帶領您掌握各種 AI 工具的應用技巧。</p>
+      <a href="/courses" class="btn btn-secondary">查看課程</a>
+    </div>
+  </div>
+</section>

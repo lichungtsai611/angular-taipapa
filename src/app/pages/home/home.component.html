@@ -1,0 +1,55 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>台灣人工智慧實務應用推廣協會</h1>
+      <p class="mission">{{ missionStatement }}</p>
+      <div class="cta-buttons">
+        <a routerLink="/courses" class="btn btn-primary">瀏覽課程</a>
+        <a routerLink="/about" class="btn btn-secondary">了解更多</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-courses">
+  <div class="container">
+    <h2 class="section-title">主要課程服務</h2>
+    <div class="courses-grid">
+      @for (course of featuredCourses; track course.title) {
+        <div class="course-card">
+          <div class="course-image">
+            <img [src]="course.image" [alt]="course.title">
+          </div>
+          <div class="course-content">
+            <h3>{{ course.title }}</h3>
+            <p>{{ course.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="latest-course">
+  <div class="container">
+    <h2 class="section-title">最新課程</h2>
+    <div class="event-card">
+      <h3>{{ latestCourse.title }}</h3>
+      <div class="event-details">
+        <p><strong>日期：</strong> {{ latestCourse.date }}</p>
+        <p><strong>地點：</strong> {{ latestCourse.location }}</p>
+      </div>
+      <a [href]="latestCourse.registerLink" class="btn btn-accent">立即報名</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <h2 class="section-title">聯絡我們</h2>
+    <div class="contact-content">
+      <p>想了解更多資訊或有任何問題，歡迎聯絡我們</p>
+      <a href="https://line.me/ti/p/~" target="_blank" class="btn btn-line">加入 LINE 好友</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<section class="news-section">
+  <div class="container">
+    <h1 class="page-title">最新課程</h1>
+    
+    <!-- 課程列表 -->
+    <div class="row">
+      <div class="col-md-6 mb-4" *ngFor="let course of allCourses">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{course.title}}</h5>
+            <p class="card-text">講師: {{course.organization}}</p>
+            <p class="card-text">日期: {{course.date}}</p>
+            <a href="#" class="btn btn-primary">查看詳情</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="courses-note">
+      <p>想了解更多課程資訊，歡迎加入 LINE 官方帳號獲取最新消息。</p>
+      <a href="https://line.me/ti/p/~" target="_blank" class="btn btn-line">加入 LINE 好友</a>
+    </div>
+  </div>
+</section>

@@ -7,7 +7,6 @@ interface Course {
   description?: string;
   duration: string;
   target?: string;
-  audience?: string;
   category: string;
   image?: string;
 }
@@ -17,7 +16,6 @@ interface NewsItem {
   date: string;
   organization?: string;
   summary?: string;
-  description?: string[];
   image?: string;
   link?: string;
 }
@@ -56,12 +54,11 @@ export class HomeComponent implements OnInit {
     description: '致力於推動人工智慧技術在台灣的實務應用與知識普及，連結產學研各界資源，培育AI人才，共創智慧未來。'
   };
   
-  // 精選課程 - 從 courses 頁面取樣
   featuredCourses: Course[] = [
     {
       title: 'ChatGPT應用技巧',
       description: '掌握ChatGPT的高效提示技巧，提升工作生產力',
-      duration: '6小時',
+      duration: '2-6小時',
       target: '所有想提升工作效率的專業人士',
       category: 'AI工具基礎課程',
       image: 'assets/ai-tools/chatgpt.png'
@@ -69,7 +66,7 @@ export class HomeComponent implements OnInit {
     {
       title: 'AI驅動的UX/UI設計',
       description: '運用AI工具加速UI設計流程，創造優質用戶體驗',
-      duration: '16小時',
+      duration: '2-6小時',
       target: '網頁設計師、UI/UX設計師',
       category: 'AI網頁設計',
       image: 'assets/ai-tools/canva.png'
@@ -77,14 +74,13 @@ export class HomeComponent implements OnInit {
     {
       title: 'AI行銷策略與實務',
       description: '結合AI技術優化行銷策略，提升轉換率與客戶體驗',
-      duration: '12小時',
+      duration: '2-6小時',
       target: '行銷人員、社群經理',
       category: 'AI數據行銷',
       image: 'assets/ai-tools/notion.png'
     }
   ];
   
-  // 最新消息 - 從 news 頁面取樣
   latestNews: NewsItem[] = [
     {
       title: 'AI 時代來臨～從跨域尋找新思維',
@@ -112,7 +108,6 @@ export class HomeComponent implements OnInit {
     }
   ];
   
-  // 精選 AI 工具
   aiTools: AITool[] = [
     {
       name: 'ChatGPT',
@@ -134,7 +129,6 @@ export class HomeComponent implements OnInit {
     }
   ];
   
-  // 團隊成員
   teamMembers: TeamMember[] = [
     {
       name: '蔡立忠',
@@ -148,7 +142,6 @@ export class HomeComponent implements OnInit {
     }
   ];
   
-  // 合作夥伴
   partners: Partner[] = [
     {
       name: '國立臺灣大學',
@@ -206,7 +199,6 @@ export class HomeComponent implements OnInit {
     }
   ];
   
-  // 使命與願景
   visionValues = [
     {
       title: '推廣 AI 知識',
@@ -226,44 +218,19 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  // 篩選後的合作夥伴
   filteredPartners: Partner[] = [];
   currentFilter: string = 'all';
   
   ngOnInit() {
-    // 初始化元件邏輯
     this.filteredPartners = [...this.partners];
   }
 
-  // 篩選合作夥伴
   filterPartners(type: string) {
     this.currentFilter = type;
     if (type === 'all') {
       this.filteredPartners = [...this.partners];
     } else {
       this.filteredPartners = this.partners.filter(partner => partner.type === type);
-    }
-    
-    // 更新活動按鈕樣式
-    setTimeout(() => {
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn instanceof HTMLElement && btn.textContent?.includes(this.getFilterButtonText(type))) {
-          btn.classList.add('active');
-        }
-      });
-    }, 0);
-  }
-  
-  // 獲取篩選按鈕文字
-  private getFilterButtonText(type: string): string {
-    switch (type) {
-      case 'all': return '所有合作夥伴';
-      case 'academic': return '學術機構';
-      case 'government': return '政府單位';
-      case 'industry': return '企業合作';
-      default: return '';
     }
   }
 

@@ -132,39 +132,10 @@ export class NewsComponent implements OnInit {
     }
   ];
 
-  /**
-   * 依照日期從近到遠排序課程
-   */
-  get sortedCourses(): Course[] {
-    return [...this.allCourses].sort((a, b) => {
-      const dateA = this.parseChineseDate(a.date);
-      const dateB = this.parseChineseDate(b.date);
-      return dateA.getTime() - dateB.getTime();
-    });
-  }
-
-  /**
-   * 獲取未來3個月內的課程
-   */
-  get upcomingCourses(): Course[] {
-    const today = new Date();
-    const threeMonthsLater = new Date();
-    threeMonthsLater.setMonth(today.getMonth() + 3);
-    
-    return this.sortedCourses.filter(course => {
-      const courseDate = this.parseChineseDate(course.date);
-      return courseDate >= today && courseDate <= threeMonthsLater;
-    });
-  }
-
   ngOnInit(): void {
-    // 初始化時按日期排序課程
     this.allCourses = this.getSortedCourses();
   }
 
-  /**
-   * 獲取按日期排序的課程
-   */
   private getSortedCourses(): Course[] {
     return [...this.newsCourses].sort((a, b) => {
       const dateA = this.parseChineseDate(a.date);
@@ -173,9 +144,6 @@ export class NewsComponent implements OnInit {
     });
   }
 
-  /**
-   * 解析中文日期格式 (例如: "2025年5月8日") 為 Date 對象
-   */
   private parseChineseDate(dateString: string): Date {
     const cleanedDate = dateString.replace(/年|月|日/g, '-');
     const dateParts = cleanedDate.split('-').filter(part => part.trim() !== '');
@@ -188,6 +156,6 @@ export class NewsComponent implements OnInit {
       return new Date(year, month, day);
     }
     
-    return new Date(); // 如果解析失敗，返回當前日期
+    return new Date();
   }
 }

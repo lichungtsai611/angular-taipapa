@@ -6,7 +6,6 @@ interface Course {
   title: string;
   duration: string;
   target: string;
-  price: string;  // 保留在介面中，但不在 UI 中顯示
 }
 
 interface CourseCategory {
@@ -30,7 +29,6 @@ interface CoursePlan {
   styleUrl: './courses.component.scss'
 })
 export class CoursesComponent {
-  // 課程類別
   allCourseCategories: CourseCategory[] = [
     {
       title: 'AI工具基礎課程',
@@ -39,14 +37,12 @@ export class CoursesComponent {
         {
           title: 'ChatGPT應用技巧',
           duration: '6小時',
-          target: '所有想提升工作效率的專業人士',
-          price: '$2,500'
+          target: '所有想提升工作效率的專業人士'
         },
         {
           title: 'Midjourney圖像生成實務',
           duration: '8小時',
-          target: '設計師、行銷人員、內容創作者',
-          price: '$3,200'
+          target: '設計師、行銷人員、內容創作者'
         }
       ]
     },
@@ -57,14 +53,12 @@ export class CoursesComponent {
         {
           title: 'AI趨勢與商業應用',
           duration: '4小時',
-          target: '企業決策者、經理人',
-          price: '$3,800'
+          target: '企業決策者、經理人'
         },
         {
           title: '產業AI轉型策略',
           duration: '12小時',
-          target: '產業分析師、策略規劃人員',
-          price: '$6,500'
+          target: '產業分析師、策略規劃人員'
         }
       ]
     },
@@ -75,14 +69,12 @@ export class CoursesComponent {
         {
           title: 'AI驅動的UX/UI設計',
           duration: '16小時',
-          target: '網頁設計師、UI/UX設計師',
-          price: '$7,200'
+          target: '網頁設計師、UI/UX設計師'
         },
         {
           title: 'AI輔助前端開發',
           duration: '20小時',
-          target: '前端開發人員、網站工程師',
-          price: '$8,500'
+          target: '前端開發人員、網站工程師'
         }
       ]
     },
@@ -93,14 +85,12 @@ export class CoursesComponent {
         {
           title: 'AI行銷策略與實務',
           duration: '12小時',
-          target: '行銷人員、社群經理',
-          price: '$5,800'
+          target: '行銷人員、社群經理'
         },
         {
           title: 'AI數據分析與應用',
           duration: '16小時',
-          target: '數據分析師、行銷策略師',
-          price: '$7,500'
+          target: '數據分析師、行銷策略師'
         }
       ]
     },
@@ -111,20 +101,17 @@ export class CoursesComponent {
         {
           title: 'AI簡報設計與呈現技巧',
           duration: '8小時',
-          target: '專業經理人、業務人員、講師',
-          price: '$4,200'
+          target: '專業經理人、業務人員、講師'
         },
         {
           title: '視覺化數據簡報製作',
           duration: '10小時',
-          target: '企業管理者、專案經理',
-          price: '$5,500'
+          target: '企業管理者、專案經理'
         }
       ]
     }
   ];
   
-  // 課程方案
   coursePlans: CoursePlan[] = [
     {
       title: '企業內訓',

@@ -83,31 +83,5 @@
         </ul>
       </div>
     </div>
-    
-    <!-- 核心團隊 -->
-    <div class="team-container">
-      <div class="section-header">
-        <div class="header-icon">
-          <span class="material-icons">groups</span>
-        </div>
-        <h2>核心團隊</h2>
-        <div class="header-underline"></div>
-      </div>
-      
-      <div class="team-grid">
-        @for (member of teamMembers; track member.name) {
-          <div class="team-member">
-            <div class="member-photo">
-              <img [src]="member.photo" [alt]="member.name" onerror="this.src='assets/images/default-avatar.jpg'">
-              <div class="member-overlay">
-                <div class="member-title">{{ member.title }}</div>
-              </div>
-            </div>
-            <h3 class="member-name">{{ member.name }}</h3>
-            <p class="member-background">{{ member.background }}</p>
-          </div>
-        }
-      </div>
-    </div>
   </div>
 </section>

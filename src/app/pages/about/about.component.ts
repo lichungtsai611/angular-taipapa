@@ -11,8 +11,6 @@ import { CommonModule } from '@angular/common';
 export class AboutComponent {
   foundedYear = 2019;
   
-  missionStatement = '致力於推動人工智慧技術在台灣的實務應用與知識普及，連結產學研各界資源，培育AI人才，共創智慧未來。';
-  
   purpose = '本會旨在推廣人工智慧技術於台灣社會的實務應用，協助全民理解並運用AI工具，以提升生活品質與職場競爭力，促進數位轉型與全民科技素養。';
   
   tasks = [
@@ -56,34 +54,6 @@ export class AboutComponent {
     }
   ];
   
-  milestones = [
-    {
-      year: 2019,
-      title: '協會成立',
-      description: '由一群熱衷於AI技術的產業專家共同發起成立'
-    },
-    {
-      year: 2020,
-      title: '首屆AI研討會',
-      description: '舉辦首屆台灣AI實務應用研討會，匯集各界專家'
-    },
-    {
-      year: 2021,
-      title: '人才培育計畫啟動',
-      description: '推出AI人才培育計畫，提供實務導向課程'
-    },
-    {
-      year: 2022,
-      title: '產學合作擴展',
-      description: '與多所大學及產業建立合作夥伴關係'
-    },
-    {
-      year: 2023,
-      title: '國際交流深化',
-      description: '開展與國際AI組織的交流與合作項目'
-    }
-  ];
-  
   teamMembers = [
     {
       name: '蔡立忠',
@@ -104,15 +74,4 @@ export class AboutComponent {
       photo: 'assets/teams/Kevin.webp'
     }
   ];
-  
-  contactInfo = {
-    phone: '0937-358-433',
-    email: 'taipapa.ai@gmail.com',
-    address: '台北市信義區松高路9號',
-    social: {
-      facebook: 'https://facebook.com/ai4taiwan',
-      linkedin: 'https://linkedin.com/company/ai4taiwan',
-      youtube: 'https://youtube.com/ai4taiwan'
-    }
-  };
 }

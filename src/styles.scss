@@ -78,7 +78,21 @@ img {
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 var(--spacing-xl);
+  max-width: 1280px;
+}
+
+/* 響應式容器 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
 }
 
 /* 按鈕樣式 */

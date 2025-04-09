@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/ai4taiwan",
+    "public": "dist/ai4taiwan/browser",
     "ignore": [
       "firebase.json",
       "**/.*",

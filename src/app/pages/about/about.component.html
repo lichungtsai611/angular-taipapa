@@ -1,7 +1,7 @@
 <section class="about-section">
   <div class="container">
     <h1 class="page-title">關於我們</h1>
-    <p class="page-subtitle">成立於 {{ foundedYear }} 年，致力於推動台灣 AI 教育與實務應用</p>
+    <p class="page-subtitle">成立於 2025 年，致力於推動台灣 AI 教育與實務應用</p>
     
     <!-- 協會宗旨 -->
     <div class="purpose-container">
@@ -57,6 +57,41 @@
             </div>
             <h3>{{ value.title }}</h3>
             <p>{{ value.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+    
+    <!-- 團隊成員 -->
+    <div class="team-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">people</span>
+        </div>
+        <h2>團隊成員</h2>
+        <div class="header-underline"></div>
+      </div>
+      
+      <div class="team-grid">
+        @for (member of teamMembers; track member.name) {
+          <div class="team-card">
+            <div class="member-photo">
+              <img [src]="member.photo" [alt]="member.name">
+            </div>
+            <div class="member-info">
+              <h3>{{ member.name }}</h3>
+              <h4>{{ member.title }}</h4>
+              <p>{{ member.background }}</p>
+              
+              <div class="member-social">
+                <a [href]="member.website" target="_blank" class="social-icon website" title="個人網站">
+                  <span class="material-icons">language</span>
+                </a>
+                <a [href]="member.linkedin" target="_blank" class="social-icon linkedin" title="LinkedIn">
+                  <span class="material-icons">work</span>
+                </a>
+              </div>
+            </div>
           </div>
         }
       </div>

@@ -58,20 +58,26 @@ export class AboutComponent {
     {
       name: '蔡立忠',
       title: '理事長',
-      background: '資深軟體工程師，專注於AI技術應用與系統開發',
-      photo: 'assets/teams/Richard.webp'
+      background: '外商資深數據工程師，專注AI技術開發、整合',
+      photo: 'assets/teams/Richard.webp',
+      website: 'https://www.richard-info.com',
+      linkedin: 'https://www.linkedin.com/in/richard-tsai-4474994a/'
     },
     {
       name: '黃海潮',
       title: '副理事長',
-      background: '資深產品經理，擅長AI解決方案規劃與專案管理',
-      photo: 'assets/teams/Eric.webp'
+      background: '外商精品龍頭數據分析師，擅長AI工具實務應用',
+      photo: 'assets/teams/Eric.webp',
+      website: 'https://www.seawave.tw',
+      linkedin: 'https://www.linkedin.com/in/seawave/'
     },
     {
       name: '廖文碩',
       title: '秘書長',
-      background: '資深技術顧問，專精於AI技術整合與企業轉型',
-      photo: 'assets/teams/Kevin.webp'
+      background: '知名整合顧問有限公司創辦人，專精於AI技術整合與企業轉型',
+      photo: 'assets/teams/Kevin.webp',
+      website: 'https://kevin.voyage/',
+      linkedin: 'https://www.linkedin.com/in/sc-kevin/'
     }
   ];
 }

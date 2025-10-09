@@ -23,111 +23,261 @@ export class NewsComponent implements OnInit {
     {
       title: '實用統計模型',
       organization: 'NTUDAC',
-      date: '2025年3月5日',
+      date: '2025-03-05',
       description: [
-        '學習統計分析在AI領域的實際應用方法',
-        '掌握資料清理、特徵工程和模型評估技巧',
-        '運用統計模型解決實際業務問題的案例分析'
+        '統計方法於資料分析與AI的實務應用',
+        '資料清理、特徵工程與模型評估',
+        '案例演練提升決策與溝通能力'
       ]
     },
     {
       title: '基礎統計模型',
-      organization: 'NCCUDAC',
-      date: '2025年5月8日',
+      organization: 'NCCUBAC',
+      date: '2025-05-08',
       description: [
-        '了解統計學基本概念與AI的關聯性',
-        '學習描述性統計和推論統計的基礎知識',
-        '掌握資料分析與視覺化的基本方法'
+        '統計學核心概念與AI的連結',
+        '描述統計與推論統計入門',
+        '資料視覺化與解讀基礎'
       ]
     },
     {
-      title: 'AI 秒生成設計感爆棚的圖表',
-      organization: '新北市工商發展投資策進會',
-      date: '2025年5月8日',
+      title: '人工智慧的發展與應用，從原理到現代商業實務',
+      organization: '南華大學',
+      date: '2025-05-13',
       description: [
-        '運用AI工具快速生成專業級數據視覺化圖表',
-        '學習圖表設計的關鍵視覺原則與技巧',
-        '掌握針對不同受眾的資料呈現方法'
+        'AI原理到商業應用的完整脈絡',
+        '跨產業導入案例與效益評估',
+        '導入流程與組織變革要點'
       ]
     },
     {
       title: '新興人工智慧技術及產業趨勢商機',
       organization: '健行科技大學',
-      date: '2025年5月14日',
+      date: '2025-05-14',
       description: [
-        '探討最新AI技術發展與未來趨勢',
-        '分析AI在各產業的商業應用與投資機會',
-        '了解企業數位轉型中的AI策略規劃'
+        '最新AI技術版圖與關鍵突破',
+        '產業應用版圖與商機解析',
+        '企業數位轉型的策略路線'
       ]
     },
     {
       title: '解鎖職場探險指南-AI時代求職生存指南',
       organization: '健行科技大學',
-      date: '2025年5月16日',
+      date: '2025-05-16',
       description: [
-        '掌握AI時代求職必備的技能與心態',
-        '學習運用AI工具優化履歷與面試表現',
-        '了解未來職場中AI與人類合作的模式'
+        'AI時代的職涯心態與必備技能',
+        '履歷優化與面試實戰技巧',
+        'AI與人協作的工作新型態'
+      ]
+    },
+    {
+      title: '政治大學 DAC 職涯分享',
+      organization: 'NCCUDAC',
+      date: '2025-05-17',
+      description: [
+        '資料與AI相關職涯路徑解析',
+        '能力地圖與學習資源建議',
+        '求職實務與面試經驗分享'
+      ]
+    },
+    {
+      title: 'AI 大數據分析與資料視覺化',
+      organization: '中原大學',
+      date: '2025-05-21',
+      description: [
+        '資料前處理與探索式分析流程',
+        '有效的資料視覺化設計原則',
+        '互動式儀表板與案例實作'
       ]
     },
     {
       title: '生成式 AI 與 ChatGPT 基礎應用',
       organization: '經濟部經貿人員培訓所',
-      date: '2025年5月22日',
+      date: '2025-05-22',
       description: [
-        '了解生成式AI和大型語言模型的基本原理',
-        '學習ChatGPT的有效提示技巧與使用方法',
-        '掌握生成式AI在專業領域的實用案例'
+        '大型語言模型與生成式AI基礎',
+        '提示工程與常見應用場景',
+        '辦公自動化與產能提升範例'
       ]
     },
     {
       title: '進階生成式 AI 應用與多元工具',
       organization: '經濟部經貿人員培訓所',
-      date: '2025年5月23日',
+      date: '2025-05-23',
       description: [
-        '深入探討生成式AI的進階應用方法',
-        '掌握多種AI工具的整合使用策略',
-        '學習自定義AI工作流程以提升工作效率'
+        '多工具整合與工作流程自動化',
+        '進階提示策略與品質控管',
+        '風險治理與組織導入建議'
+      ]
+    },
+    {
+      title: '職場數位工具與 AI 運用：行事曆與專案管理實務（以 Notion 為主）',
+      organization: '中原大學',
+      date: '2025-05-28',
+      description: [
+        '行事曆與專案管理實務流程',
+        'Notion資料庫與自動化實作',
+        '團隊協作與流程最佳化'
+      ]
+    },
+    {
+      title: 'POWERPOINT與GAMMA AI的高效應用',
+      organization: '新北市衛生局心衛中心',
+      date: '2025-06-02',
+      description: [
+        'AI輔助簡報與內容生成技巧',
+        'Gamma與PPT協作製作流程',
+        '視覺溝通與版面設計要訣'
       ]
     },
     {
       title: 'AI 秒生成設計感爆棚的圖表',
       organization: '臺北醫學大學',
-      date: '2025年6月11日',
+      date: '2025-06-11',
       description: [
-        '使用AI工具創建醫療數據的專業視覺化呈現',
-        '學習醫學研究中的數據圖表設計原則',
-        '掌握科學數據視覺化的清晰有效表達方法'
+        '快速生成專業級數據圖表',
+        '視覺設計原則與色彩運用',
+        '依受眾調整資訊呈現'
+      ]
+    },
+    {
+      title: 'AI 秒生成設計感爆棚的圖表',
+      organization: '臺北醫學大學',
+      date: '2025-07-04',
+      description: [
+        '快速生成專業級數據圖表',
+        '視覺設計原則與色彩運用',
+        '依受眾調整資訊呈現'
+      ]
+    },
+    {
+      title: 'ChatGPT 與 AI 工具在公務流程中的高效應用',
+      organization: '新北市衛生局心衛中心',
+      date: '2025-07-14',
+      description: [
+        '公務流程的AI應用與範例',
+        '表單、文書與紀錄自動化',
+        '資安與合規注意事項'
+      ]
+    },
+    {
+      title: '用Excel與ChatGPT打造高效AI小幫手',
+      organization: '新北市政府產業策進',
+      date: '2025-07-17',
+      description: [
+        'Excel與AI整合的實戰技巧',
+        '函數、巨集與自動化應用',
+        '資料處理到報表的一條龍'
       ]
     },
     {
       title: 'CANVA 資料視覺化',
       organization: '臺北醫學大學',
-      date: '2025年7月25日',
+      date: '2025-07-22',
       description: [
-        '學習使用Canva進行專業資料視覺化設計',
-        '掌握醫療數據的有效視覺呈現技巧',
-        '運用模板和自定義設計創建專業報告圖表'
+        'Canva圖表與資訊設計方法',
+        '模板選用與品牌一致性',
+        '輸出報告與簡報最佳實務'
+      ]
+    },
+    {
+      title: '生成式 AI 與 ChatGPT 基礎應用-掌握 ChatGPT 基本操作與辦公應用',
+      organization: '菸酒公司政風處',
+      date: '2025-08-04',
+      description: [
+        'ChatGPT基本操作與最佳實務',
+        '常見辦公場景與自動化範例',
+        '風險與限制的正確認知'
+      ]
+    },
+    {
+      title: 'AI 工作術：打造高校自動人生',
+      organization: '新明青創基地',
+      date: '2025-08-13',
+      description: [
+        '設計個人高效工作流程',
+        '自動化工具選型與整合',
+        '建立可持續的生產力系統'
+      ]
+    },
+    {
+      title: '數位工具與AI運用 : 行事曆與專案管理實務(以Notion為主)',
+      organization: '玄奘大學',
+      date: '2025-09-03',
+      description: [
+        '行事曆規劃與任務追蹤',
+        'Notion工作區與資料庫設計',
+        '協作規範與流程優化'
       ]
     },
     {
       title: 'AI 人工智慧的發展趨勢及產業運用',
       organization: '新北市政府就業服務處',
-      date: '2025年9月5日',
+      date: '2025-09-05',
       description: [
-        '了解AI技術最新發展與未來五年趨勢',
-        '探討AI在各產業的創新應用案例',
-        '分析AI人才需求與就業市場變化'
+        'AI發展趨勢與影響',
+        '產業導入案例與價值',
+        '人才需求與職能盤點'
+      ]
+    },
+    {
+      title: 'Python 101',
+      organization: '經濟部經貿人員培訓所',
+      date: '2025-09-17',
+      description: [
+        'Python基礎語法與環境',
+        '資料處理與常用套件',
+        '實作練習建立基礎能力'
+      ]
+    },
+    {
+      title: 'AI 數據應用',
+      organization: '國立台北大學',
+      date: '2025-10-16',
+      description: [
+        '數據驅動決策與應用場景',
+        '指標設計與資料管線',
+        '分析流程與儀表板呈現'
+      ]
+    },
+    {
+      title: 'AIxExcel',
+      organization: '台灣菸酒公司',
+      date: '2025-10-29',
+      description: [
+        'Excel進階功能結合AI工具',
+        '資料清理、計算與視覺化',
+        '日常工作自動化的技巧'
       ]
     },
     {
       title: 'AI 時代來臨～從跨域尋找新思維',
       organization: '宜蘭縣政府',
-      date: '2025年10月14日',
+      date: '2025-10-14',
       description: [
-        '探討AI如何促進跨領域創新與合作',
-        '學習整合不同專業知識發展AI應用',
-        '案例分析：AI在地方特色產業的創新機會'
+        '跨域整合激發創新與價值',
+        '多專業合作的實務方法',
+        '在地產業的AI應用案例'
+      ]
+    },
+    {
+      title: 'Python 101',
+      organization: '經濟部經貿人員培訓所',
+      date: '2025-11-05',
+      description: [
+        'Python基礎語法與環境',
+        '資料處理與常用套件',
+        '實作練習建立基礎能力'
+      ]
+    },
+    {
+      title: 'AI 生活應用',
+      organization: '台北教育大學',
+      date: '2025-11-19',
+      description: [
+        '日常生活中可落地的AI工具',
+        '情境式應用與實例演練',
+        '提升數位素養與效率'
       ]
     }
   ];
@@ -140,22 +290,31 @@ export class NewsComponent implements OnInit {
     return [...this.newsCourses].sort((a, b) => {
       const dateA = this.parseChineseDate(a.date);
       const dateB = this.parseChineseDate(b.date);
-      return dateA.getTime() - dateB.getTime();
+      return dateB.getTime() - dateA.getTime();
     });
   }
 
   private parseChineseDate(dateString: string): Date {
-    const cleanedDate = dateString.replace(/年|月|日/g, '-');
-    const dateParts = cleanedDate.split('-').filter(part => part.trim() !== '');
-    
-    if (dateParts.length >= 3) {
-      const year = parseInt(dateParts[0]);
-      const month = parseInt(dateParts[1]) - 1; // JavaScript 月份從 0 開始
-      const day = parseInt(dateParts[2]);
-      
+    const trimmed = dateString.trim();
+    // Support ISO format: YYYY-MM-DD
+    if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+      const [yearStr, monthStr, dayStr] = trimmed.split('-');
+      const year = parseInt(yearStr, 10);
+      const month = parseInt(monthStr, 10) - 1;
+      const day = parseInt(dayStr, 10);
       return new Date(year, month, day);
     }
-    
+
+    // Fallback: Chinese format e.g. 2025年3月5日
+    const cleanedDate = trimmed.replace(/年|月|日/g, '-');
+    const dateParts = cleanedDate.split('-').filter(part => part.trim() !== '');
+    if (dateParts.length >= 3) {
+      const year = parseInt(dateParts[0], 10);
+      const month = parseInt(dateParts[1], 10) - 1; // JavaScript 月份從 0 開始
+      const day = parseInt(dateParts[2], 10);
+      return new Date(year, month, day);
+    }
+
     return new Date();
   }
 }

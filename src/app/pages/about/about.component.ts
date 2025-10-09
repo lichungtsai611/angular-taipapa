@@ -78,6 +78,14 @@ export class AboutComponent {
       photo: 'assets/teams/Kevin.webp',
       website: 'https://kevin.voyage/',
       linkedin: 'https://www.linkedin.com/in/sc-kevin/'
+    },
+    {
+      name: '陳建哲',
+      title: 'AI應用講師',
+      background: '職業講師，專精於AI技術應用與實務操作',
+      photo: 'assets/teams/Calvin.webp',
+      website: 'https://grouptw.moi.gov.tw/SearchGroup?size=&page=&IsQuery=true&tab=little&Q_Name=%E5%8F%B0%E7%81%A3%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7%E5%AF%A6%E5%8B%99%E6%87%89%E7%94%A8%E6%8E%A8%E5%BB%A3%E5%8D%94%E6%9C%83&Q_Type=%E7%A4%BE%E6%9C%83%E5%9C%98%E9%AB%94',
+      linkedin: 'https://www.facebook.com/chen.jian.zhe.100892'
     }
   ];
 }

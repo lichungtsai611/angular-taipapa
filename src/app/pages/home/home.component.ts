@@ -49,8 +49,8 @@ interface Partner {
 })
 export class HomeComponent implements OnInit {
   heroSection = {
-    title: '台灣人工智慧實務應用推廣協會',
-    subtitle: '培育 AI 人才，共創智慧未來',
+    title: 'AI For Taiwan',
+    subtitle: '培育台灣 AI 人才，共創智慧未來',
     description: '致力於推動人工智慧技術在台灣的實務應用與知識普及，連結產學研各界資源，培育AI人才，共創智慧未來。'
   };
   
@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
       duration: '2-6小時',
       target: '所有想提升工作效率的專業人士',
       category: 'AI工具基礎課程',
-      image: 'assets/ai-tools/chatgpt.png'
+      image: 'assets/ai-tools/chatgpt.webp'
     },
     {
       title: 'AI驅動的UX/UI設計',
@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
       duration: '2-6小時',
       target: '網頁設計師、UI/UX設計師',
       category: 'AI網頁設計',
-      image: 'assets/ai-tools/canva.png'
+      image: 'assets/ai-tools/canva.webp'
     },
     {
       title: 'AI行銷策略與實務',
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
       duration: '2-6小時',
       target: '行銷人員、社群經理',
       category: 'AI數據行銷',
-      image: 'assets/ai-tools/notion.png'
+      image: 'assets/ai-tools/notion.webp'
     }
   ];
   
@@ -112,19 +112,19 @@ export class HomeComponent implements OnInit {
     {
       name: 'ChatGPT',
       description: '強大的自然語言處理 AI，能進行對話、寫作等多種任務',
-      image: 'assets/ai-tools/chatgpt.png',
+      image: 'assets/ai-tools/chatgpt.webp',
       category: '文字生成'
     },
     {
       name: 'Canva',
       description: '整合 AI 功能的線上設計工具，讓設計變得更簡單直覺',
-      image: 'assets/ai-tools/canva.png',
+      image: 'assets/ai-tools/canva.webp',
       category: '圖像設計'
     },
     {
       name: 'Notion AI',
       description: '智能筆記與知識管理工具，協助團隊更有效率地協作',
-      image: 'assets/ai-tools/notion.png',
+      image: 'assets/ai-tools/notion.webp',
       category: '辦公協作'
     }
   ];
@@ -224,6 +224,12 @@ export class HomeComponent implements OnInit {
       link: 'https://www.cycu.edu.tw/'
     },
     {
+      name: '長庚科技大學',
+      logo: 'assets/partners/長庚科技大學.webp',
+      type: 'academic',
+      link: 'https://www.cgust.edu.tw/'
+    },
+    {
       name: '健行科技大學',
       logo: 'assets/partners/健行科技大學.webp',
       type: 'academic',
@@ -254,7 +260,14 @@ export class HomeComponent implements OnInit {
       logo: 'assets/partners/新北市工商發展投資策進會.webp',
       type: 'industry',
       link: 'https://www.ntpc.gov.tw/'
+    },
+    {
+      name: '快找整合顧問有限公司',
+      logo: 'assets/partners/快找整合顧問有限公司.webp',
+      type: 'industry',
+      link: 'https://sc-icg.com/'
     }
+
   ];
   
   visionValues = [

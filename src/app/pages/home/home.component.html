@@ -177,8 +177,8 @@
     <div class="partner-filter">
       <button class="filter-btn" [class.active]="currentFilter === 'all'" (click)="filterPartners('all')">所有合作夥伴</button>
       <button class="filter-btn" [class.active]="currentFilter === 'government'" (click)="filterPartners('government')">政府單位</button>
-      <button class="filter-btn" [class.active]="currentFilter === 'academic'" (click)="filterPartners('academic')">學術機構</button>
-      <button class="filter-btn" [class.active]="currentFilter === 'industry'" (click)="filterPartners('industry')">產業組織</button>
+      <button class="filter-btn" [class.active]="currentFilter === 'academic'" (click)="filterPartners('academic')">大專院校</button>
+      <button class="filter-btn" [class.active]="currentFilter === 'industry'" (click)="filterPartners('industry')">中小企業</button>
     </div>
 
     <div class="partners-container">
@@ -193,7 +193,7 @@
             </div>
           </div>
           <p class="partner-name">{{ partner.name }}</p>
-          <span class="partner-type">{{ partner.type === 'academic' ? '學術機構' : partner.type === 'government' ? '政府單位' : '產業組織' }}</span>
+          <span class="partner-type">{{ partner.type === 'academic' ? '大專院校' : partner.type === 'government' ? '政府單位' : '中小企業' }}</span>
         </div>
       </div>
     </div>

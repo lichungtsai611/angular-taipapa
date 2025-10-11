@@ -57,15 +57,15 @@ export class AboutComponent {
   // 管理成員
   managementMembers = [
     {
-      name: '蔡立忠',
-      title: '理事長',
+      name: '蔡立忠 Richard',
+      title: '負責人、理事長',
       background: '外商資深數據工程師，專注AI技術開發、整合',
       photo: 'assets/teams/Richard.webp',
       website: 'https://www.richard-info.com',
       linkedin: 'https://www.linkedin.com/in/richard-tsai-4474994a/'
     },
     {
-      name: '黃海潮',
+      name: '黃海潮 Eric',
       title: '副理事長',
       background: '外商精品龍頭數據分析師，擅長AI工具實務應用',
       photo: 'assets/teams/Eric.webp',
@@ -73,9 +73,9 @@ export class AboutComponent {
       linkedin: 'https://www.linkedin.com/in/seawave/'
     },
     {
-      name: '廖文碩',
+      name: '廖文碩 Kevin',
       title: '秘書長',
-      background: '知名整合顧問有限公司創辦人，專精於AI技術整合與企業轉型',
+      background: '快找整合顧問有限公司創辦人，專精於AI技術整合與企業轉型',
       photo: 'assets/teams/Kevin.webp',
       website: 'https://kevin.voyage/',
       linkedin: 'https://www.linkedin.com/in/sc-kevin/'
@@ -85,19 +85,27 @@ export class AboutComponent {
   // 業界顧問
   industryAdvisors = [
     {
-      name: '吳仁凱',
+      name: '韓諆璋 Jonathan',
+      title: 'AI行銷講師',
+      background: '密米爾行銷公司創辦人、知名平台線上課程講師',
+      photo: 'assets/teams/韓諆璋.webp',
+      website: 'https://hahow.in/courses/5e586dc6c8bfb6002494c0d6',
+      linkedin: 'https://hahow.in/courses/5e586dc6c8bfb6002494c0d6'
+    },
+    {
+      name: '吳仁凱 Kevin',
       title: 'Python業師',
       background: '台積電工程師，擅長開發AI自動化工具與應用',
       photo: 'assets/teams/KevinWu.webp',
-      website: 'https://grouptw.moi.gov.tw/SearchGroup?size=&page=&IsQuery=true&tab=little&Q_Name=%E5%8F%B0%E7%81%A3%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7%E5%AF%A6%E5%8B%99%E6%87%89%E7%94%A8%E6%8E%A8%E5%BB%A3%E5%8D%94%E6%9C%83&Q_Type=%E7%A4%BE%E6%9C%83%E5%9C%98%E9%AB%94',
+      website: 'https://www.linkedin.com/in/%E4%BB%81%E5%87%B1-%E5%90%B3-bb234b13b/',
       linkedin: 'https://www.linkedin.com/in/%E4%BB%81%E5%87%B1-%E5%90%B3-bb234b13b/'
     },
     {
-      name: '陳建哲',
+      name: '陳建哲 Calvin',
       title: 'AI應用講師',
       background: '職業講師，專精於AI技術應用與實務操作',
       photo: 'assets/teams/Calvin.webp',
-      website: 'https://grouptw.moi.gov.tw/SearchGroup?size=&page=&IsQuery=true&tab=little&Q_Name=%E5%8F%B0%E7%81%A3%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7%E5%AF%A6%E5%8B%99%E6%87%89%E7%94%A8%E6%8E%A8%E5%BB%A3%E5%8D%94%E6%9C%83&Q_Type=%E7%A4%BE%E6%9C%83%E5%9C%98%E9%AB%94',
+      website: 'https://www.facebook.com/chen.jian.zhe.100892',
       linkedin: 'https://www.facebook.com/chen.jian.zhe.100892'
     }
   ];

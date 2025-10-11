@@ -8,19 +8,31 @@
     
     <!-- 課程列表 -->
     <div class="courses-list-container">
-      <div class="courses-list">
+      <div class="courses-grid">
         <div class="course-item" *ngFor="let course of allCourses">
-          <div class="course-date">
-            <span>{{course.date}}</span>
-          </div>
-          <div class="course-content">
+          <div class="course-left">
             <h3 class="course-title">{{course.title}}</h3>
-            <div class="course-org">
-              <span class="org-badge">{{course.organization}}</span>
+            <div class="course-meta">
+              <div class="course-date">
+                <span class="material-icons">calendar_today</span>
+                <span class="date-text">{{course.date}}</span>
+              </div>
+              <div class="course-lecturer">
+                <img [src]="getLecturerPhoto(course.lecturer)" [alt]="course.lecturer" class="lecturer-photo">
+                <span class="lecturer-name">{{course.lecturer}}</span>
+              </div>
+              <div class="course-org">
+                <span class="material-icons">location_on</span>
+                <span class="org-text">{{course.organization}}</span>
+              </div>
             </div>
+          </div>
+          
+          <div class="course-right">
             <ul class="course-description">
               <li *ngFor="let item of course.description">
-                {{item}}
+                <span class="material-icons">check_circle</span>
+                <span class="description-text">{{item}}</span>
               </li>
             </ul>
           </div>

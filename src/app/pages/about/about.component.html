@@ -3,65 +3,6 @@
     <h1 class="page-title">關於我們</h1>
     <p class="page-subtitle">成立於 2025 年，致力於推動台灣 AI 教育與實務應用</p>
     
-    <!-- 協會宗旨 -->
-    <div class="purpose-container">
-      <div class="section-header">
-        <div class="header-icon">
-          <span class="material-icons">gavel</span>
-        </div>
-        <h2>協會宗旨</h2>
-        <div class="header-underline"></div>
-      </div>
-      <div class="purpose-content">
-        <p class="purpose-statement">{{ purpose }}</p>
-      </div>
-    </div>
-    
-    <!-- 協會任務 -->
-    <div class="tasks-container">
-      <div class="section-header">
-        <div class="header-icon">
-          <span class="material-icons">assignment</span>
-        </div>
-        <h2>協會任務</h2>
-        <div class="header-underline"></div>
-      </div>
-      
-      <div class="tasks-content">
-        <ul class="tasks-list">
-          @for (task of tasks; track task; let i = $index) {
-            <li>
-              <span class="task-number">{{ i + 1 }}</span>
-              <span class="task-text">{{ task }}</span>
-            </li>
-          }
-        </ul>
-      </div>
-    </div>
-    
-    <!-- 核心價值 -->
-    <div class="values-container">
-      <div class="section-header">
-        <div class="header-icon">
-          <span class="material-icons">star</span>
-        </div>
-        <h2>核心價值</h2>
-        <div class="header-underline"></div>
-      </div>
-      
-      <div class="values-grid">
-        @for (value of coreValues; track value.title) {
-          <div class="value-card">
-            <div class="value-icon">
-              <span class="material-icons">{{ value.icon }}</span>
-            </div>
-            <h3>{{ value.title }}</h3>
-            <p>{{ value.description }}</p>
-          </div>
-        }
-      </div>
-    </div>
-    
     <!-- 管理成員 -->
     <div class="team-container">
       <div class="section-header">
@@ -127,6 +68,65 @@
                 </a>
               </div>
             </div>
+          </div>
+        }
+      </div>
+    </div>
+    
+    <!-- 協會宗旨 -->
+    <div class="purpose-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">gavel</span>
+        </div>
+        <h2>協會宗旨</h2>
+        <div class="header-underline"></div>
+      </div>
+      <div class="purpose-content">
+        <p class="purpose-statement">{{ purpose }}</p>
+      </div>
+    </div>
+    
+    <!-- 協會任務 -->
+    <div class="tasks-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">assignment</span>
+        </div>
+        <h2>協會任務</h2>
+        <div class="header-underline"></div>
+      </div>
+      
+      <div class="tasks-content">
+        <ul class="tasks-list">
+          @for (task of tasks; track task; let i = $index) {
+            <li>
+              <span class="task-number">{{ i + 1 }}</span>
+              <span class="task-text">{{ task }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 核心價值 -->
+    <div class="values-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">star</span>
+        </div>
+        <h2>核心價值</h2>
+        <div class="header-underline"></div>
+      </div>
+      
+      <div class="values-grid">
+        @for (value of coreValues; track value.title) {
+          <div class="value-card">
+            <div class="value-icon">
+              <span class="material-icons">{{ value.icon }}</span>
+            </div>
+            <h3>{{ value.title }}</h3>
+            <p>{{ value.description }}</p>
           </div>
         }
       </div>

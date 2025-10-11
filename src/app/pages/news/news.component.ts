@@ -333,7 +333,7 @@ export class NewsComponent implements OnInit {
       title: '精準傳達你の簡報資訊',
       organization: '國立政治大學',
       date: '2025-11-13',
-      lecturer: '黃海潮老師',
+      lecturer: '廖文碩老師',
       description: [
         '簡報 × AI 工具協作思維',
         '強化資訊傳達的八大元素',

@@ -54,7 +54,8 @@ export class AboutComponent {
     }
   ];
   
-  teamMembers = [
+  // 管理成員
+  managementMembers = [
     {
       name: '蔡立忠',
       title: '理事長',
@@ -78,7 +79,11 @@ export class AboutComponent {
       photo: 'assets/teams/Kevin.webp',
       website: 'https://kevin.voyage/',
       linkedin: 'https://www.linkedin.com/in/sc-kevin/'
-    },
+    }
+  ];
+
+  // 業界顧問
+  industryAdvisors = [
     {
       name: '吳仁凱',
       title: 'Python業師',

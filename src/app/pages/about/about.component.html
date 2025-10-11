@@ -62,18 +62,53 @@
       </div>
     </div>
     
-    <!-- 團隊成員 -->
+    <!-- 管理成員 -->
     <div class="team-container">
       <div class="section-header">
         <div class="header-icon">
-          <span class="material-icons">people</span>
+          <span class="material-icons">admin_panel_settings</span>
         </div>
-        <h2>團隊成員</h2>
+        <h2>管理成員</h2>
         <div class="header-underline"></div>
       </div>
       
       <div class="team-grid">
-        @for (member of teamMembers; track member.name) {
+        @for (member of managementMembers; track member.name) {
+          <div class="team-card">
+            <div class="member-photo">
+              <img [src]="member.photo" [alt]="member.name">
+            </div>
+            <div class="member-info">
+              <h3>{{ member.name }}</h3>
+              <h4>{{ member.title }}</h4>
+              <p>{{ member.background }}</p>
+              
+              <div class="member-social">
+                <a [href]="member.website" target="_blank" class="social-icon website" title="個人網站">
+                  <span class="material-icons">language</span>
+                </a>
+                <a [href]="member.linkedin" target="_blank" class="social-icon linkedin" title="LinkedIn">
+                  <span class="material-icons">work</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- 業界顧問 -->
+    <div class="team-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">business_center</span>
+        </div>
+        <h2>業界顧問</h2>
+        <div class="header-underline"></div>
+      </div>
+      
+      <div class="team-grid">
+        @for (member of industryAdvisors; track member.name) {
           <div class="team-card">
             <div class="member-photo">
               <img [src]="member.photo" [alt]="member.name">

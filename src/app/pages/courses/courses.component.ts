@@ -40,7 +40,7 @@ export class CoursesComponent {
           target: '所有想提升工作效率的專業人士'
         },
         {
-          title: 'Midjourney圖像生成實務',
+          title: 'Sora圖像生成實務',
           duration: '8小時',
           target: '設計師、行銷人員、內容創作者'
         }
@@ -72,9 +72,9 @@ export class CoursesComponent {
           target: '網頁設計師、UI/UX設計師'
         },
         {
-          title: 'AI輔助前端開發',
+          title: 'AI個人面試網站架設',
           duration: '20小時',
-          target: '前端開發人員、網站工程師'
+          target: '求職者、前端開發人員、網站工程師'
         }
       ]
     },

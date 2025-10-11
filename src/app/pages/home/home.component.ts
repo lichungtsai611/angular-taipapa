@@ -143,59 +143,117 @@ export class HomeComponent implements OnInit {
   ];
   
   partners: Partner[] = [
+    // Government Partners
     {
-      name: '國立臺灣大學',
-      logo: 'assets/partners/國立臺灣大學.png',
-      type: 'academic',
-      link: 'https://www.ntu.edu.tw/'
+      name: '中華民國經濟部',
+      logo: 'assets/partners/中華民國經濟部.webp',
+      type: 'government',
+      link: 'https://www.moea.gov.tw/'
     },
     {
-      name: '臺北醫學大學',
-      logo: 'assets/partners/臺北醫學大學.png',
-      type: 'academic',
-      link: 'https://www.tmu.edu.tw/'
-    },
-    {
-      name: '國立政治大學',
-      logo: 'assets/partners/國立政治大學.png',
-      type: 'academic',
-      link: 'https://www.nccu.edu.tw/'
-    },
-    {
-      name: '健行科技大學',
-      logo: 'assets/partners/健行科技大學.png',
-      type: 'academic',
-      link: 'https://www.uch.edu.tw/'
-    },
-    {
-      name: '台北市立大學',
-      logo: 'assets/partners/台北市立大學.jpg',
-      type: 'academic',
-      link: 'https://www.utaipei.edu.tw/'
+      name: '中華民國勞動部',
+      logo: 'assets/partners/中華民國勞動部.webp',
+      type: 'government',
+      link: 'https://www.mol.gov.tw/'
     },
     {
       name: '新北市政府',
-      logo: 'assets/partners/新北市政府.png',
+      logo: 'assets/partners/新北市政府.webp',
       type: 'government',
       link: 'https://www.ntpc.gov.tw/'
     },
     {
-      name: '宜蘭縣政府',
-      logo: 'assets/partners/宜蘭縣政府.png',
-      type: 'government',
-      link: 'https://www.e-land.gov.tw/'
-    },
-    {
       name: '台南市政府',
-      logo: 'assets/partners/台南市政府.png',
+      logo: 'assets/partners/台南市政府.webp',
       type: 'government',
       link: 'https://www.tainan.gov.tw/'
     },
     {
-      name: '中華民國勞動部',
-      logo: 'assets/partners/中華民國勞動部.png',
+      name: '宜蘭縣政府',
+      logo: 'assets/partners/宜蘭縣政府.webp',
       type: 'government',
-      link: 'https://www.mol.gov.tw/'
+      link: 'https://www.e-land.gov.tw/'
+    },
+    // Academic Partners
+    {
+      name: '國立臺灣大學',
+      logo: 'assets/partners/國立臺灣大學.webp',
+      type: 'academic',
+      link: 'https://www.ntu.edu.tw/'
+    },
+    {
+      name: '國立政治大學',
+      logo: 'assets/partners/國立政治大學.webp',
+      type: 'academic',
+      link: 'https://www.nccu.edu.tw/'
+    },
+    {
+      name: '國立中正大學',
+      logo: 'assets/partners/國立中正大學.webp',
+      type: 'academic',
+      link: 'https://www.ccu.edu.tw/'
+    },
+    {
+      name: '國立臺北大學',
+      logo: 'assets/partners/國立臺北大學.webp',
+      type: 'academic',
+      link: 'https://www.ntpu.edu.tw/'
+    },
+    {
+      name: '臺北醫學大學',
+      logo: 'assets/partners/臺北醫學大學.webp',
+      type: 'academic',
+      link: 'https://www.tmu.edu.tw/'
+    },
+    {
+      name: '台北教育大學',
+      logo: 'assets/partners/台北教育大學.webp',
+      type: 'academic',
+      link: 'https://www.ntue.edu.tw/'
+    },
+    {
+      name: '國立台南大學',
+      logo: 'assets/partners/國立台南大學.webp',
+      type: 'academic',
+      link: 'https://www.nutn.edu.tw/'
+    },
+    {
+      name: '中原大學',
+      logo: 'assets/partners/中原大學.webp',
+      type: 'academic',
+      link: 'https://www.cycu.edu.tw/'
+    },
+    {
+      name: '健行科技大學',
+      logo: 'assets/partners/健行科技大學.webp',
+      type: 'academic',
+      link: 'https://www.uch.edu.tw/'
+    },
+    {
+      name: '南華大學',
+      logo: 'assets/partners/南華大學.webp',
+      type: 'academic',
+      link: 'https://www.nhu.edu.tw/'
+    },
+    {
+      name: '台北市立大學',
+      logo: 'assets/partners/台北市立大學.webp',
+      type: 'academic',
+      link: 'https://www.utaipei.edu.tw/'
+    },
+    {
+      name: '國立台南女中',
+      logo: 'assets/partners/國立台南女中.webp',
+      type: 'academic',
+      link: 'https://www.tngs.tn.edu.tw/'
+    },
+
+    // Industry/Organization Partners
+    {
+      name: '新北市工商發展投資策進會',
+      logo: 'assets/partners/新北市工商發展投資策進會.webp',
+      type: 'industry',
+      link: 'https://www.ntpc.gov.tw/'
     }
   ];
   

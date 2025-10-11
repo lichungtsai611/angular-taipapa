@@ -32,7 +32,7 @@ export class AIResourcesComponent {
     {
       name: 'ChatGPT',
       description: '強大的自然語言處理AI，能夠進行對話、寫作、編程等多種任務',
-      image: 'assets/ai-tools/chatgpt.png',
+      image: 'assets/ai-tools/chatgpt.webp',
       link: 'https://chat.openai.com',
       category: '文字生成',
       features: [
@@ -45,7 +45,7 @@ export class AIResourcesComponent {
     {
       name: 'Gemini',
       description: 'Google 開發的多模態 AI 模型，支援文字、圖像、代碼等多種輸入',
-      image: 'assets/ai-tools/gemini.png',
+      image: 'assets/ai-tools/gemini.webp',
       link: 'https://gemini.google.com',
       category: '文字生成',
       features: [
@@ -58,7 +58,7 @@ export class AIResourcesComponent {
     {
       name: 'Canva',
       description: '整合 AI 功能的線上設計工具，讓設計變得更簡單直覺',
-      image: 'assets/ai-tools/canva.png',
+      image: 'assets/ai-tools/canva.webp',
       link: 'https://www.canva.com',
       category: '圖像設計',
       features: [
@@ -71,7 +71,7 @@ export class AIResourcesComponent {
     {
       name: 'Notion AI',
       description: '智能筆記與知識管理工具，協助團隊更有效率地協作',
-      image: 'assets/ai-tools/notion.png',
+      image: 'assets/ai-tools/notion.webp',
       link: 'https://www.notion.so',
       category: '辦公協作',
       features: [
@@ -82,9 +82,22 @@ export class AIResourcesComponent {
       ]
     },
     {
+      name: 'NotebookLM',
+      description: 'Google 開發的 AI 筆記本工具，能夠分析文檔並回答相關問題',
+      image: 'assets/ai-tools/notebooklm.webp',
+      link: 'https://notebooklm.google.com',
+      category: '文字生成',
+      features: [
+        '文檔分析',
+        '智能問答',
+        '知識整理',
+        '研究助手'
+      ]
+    },
+    {
       name: 'LINE',
       description: '整合 AI 助理的即時通訊平台，提供智能對話與服務',
-      image: 'assets/ai-tools/line.png',
+      image: 'assets/ai-tools/line.webp',
       link: 'https://line.me',
       category: '通訊工具',
       features: [

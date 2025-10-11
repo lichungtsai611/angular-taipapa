@@ -286,6 +286,17 @@ export class NewsComponent implements OnInit {
       ]
     },
     {
+      title: '運用AI工具進行時間管理',
+      organization: '長庚科技大學',
+      date: '2025-10-14',
+      lecturer: '蔡立忠老師',
+      description: [
+        '跨域整合激發創新與價值',
+        '多專業合作的實務方法',
+        '在地產業的AI應用案例'
+      ]
+    },
+    {
       title: 'Python 101',
       organization: '經濟部經貿人員培訓所',
       date: '2025-11-05',

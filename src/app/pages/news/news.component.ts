@@ -297,6 +297,28 @@ export class NewsComponent implements OnInit {
       ]
     },
     {
+      title: 'AI 工具來助攻－圖卡設計與海報製作',
+      organization: '臺南市政府公務人力發展中心',
+      date: '2025-10-20',
+      lecturer: '廖文碩老師',
+      description: [
+        'Canva x AI - 自製專屬素材',
+        'Canva x 範本 - 打造個人模板',
+        '視覺設計心法與案例演練',
+     ]
+    },
+    {
+      title: 'Demo Day 生存指南：怎麼上台不怯場？',
+      organization: '長庚科技大學',
+      date: '2025-10-20',
+      lecturer: '廖文碩老師',
+      description: [
+        'Canva x 簡報 - 資訊設計 SOP',
+        'Canva x AI - 客製化視覺應用',
+        '提案簡報邏輯與舞台表達技巧'
+     ]
+    },
+    {
       title: 'Python 101',
       organization: '經濟部經貿人員培訓所',
       date: '2025-11-05',
@@ -305,6 +327,17 @@ export class NewsComponent implements OnInit {
         'Python基礎語法與環境',
         '資料處理與常用套件',
         '實作練習建立基礎能力'
+      ]
+    },
+    {
+      title: '精準傳達你の簡報資訊',
+      organization: '國立政治大學',
+      date: '2025-11-13',
+      lecturer: '黃海潮老師',
+      description: [
+        '簡報 × AI 工具協作思維',
+        '強化資訊傳達的八大元素',
+        '簡報資訊設計的整理五步驟'
       ]
     },
     {
@@ -329,6 +362,14 @@ export class NewsComponent implements OnInit {
       return 'assets/teams/Richard.webp';
     } else if (lecturerName.includes('黃海潮')) {
       return 'assets/teams/Eric.webp';
+    }else if (lecturerName.includes('廖文碩')) {
+      return 'assets/teams/Kevin.webp';
+    }else if (lecturerName.includes('韓諆璋')) {
+      return 'assets/teams/韓諆璋.webp';
+    }else if (lecturerName.includes('吳仁凱')) {
+      return 'assets/teams/KevinWu.webp';
+    }else if (lecturerName.includes('陳建哲')) {
+      return 'assets/teams/Calvin.webp';
     }
     return 'assets/teams/default.webp'; // fallback
   }

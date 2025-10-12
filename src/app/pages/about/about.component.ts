@@ -1,6 +1,22 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+type SocialType = 'website' | 'linkedin' | 'facebook';
+
+interface SocialLink {
+  type: SocialType;
+  url: string;
+}
+
+interface Member {
+  name: string;
+  title: string;
+  background: string;
+  photo: string;
+  photoLink?: string;
+  socials: SocialLink[];
+}
+
 @Component({
   selector: 'app-about',
   standalone: true,
@@ -10,6 +26,16 @@ import { CommonModule } from '@angular/common';
 })
 export class AboutComponent {
   foundedYear = 2019;
+  socialIconAssets: Record<SocialType, string> = {
+    website: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Globe_icon.svg',
+    linkedin: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png',
+    facebook: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png'
+  };
+  socialLabelMap: Record<SocialType, string> = {
+    website: '個人網站',
+    linkedin: 'LinkedIn',
+    facebook: 'Facebook'
+  };
   
   purpose = '本會旨在推廣人工智慧技術於台灣社會的實務應用，協助全民理解並運用AI工具，以提升生活品質與職場競爭力，促進數位轉型與全民科技素養。';
   
@@ -55,58 +81,97 @@ export class AboutComponent {
   ];
   
   // 管理成員
-  managementMembers = [
+  managementMembers: Member[] = [
     {
       name: '蔡立忠 Richard',
       title: '負責人、理事長',
       background: '外商資深數據工程師，專注AI技術開發、整合',
       photo: 'assets/teams/Richard.webp',
-      website: 'https://www.richard-info.com',
-      linkedin: 'https://www.linkedin.com/in/richard-tsai-4474994a/'
+      photoLink: 'https://www.richard-info.com',
+      socials: [
+        {
+          type: 'linkedin',
+          url: 'https://www.linkedin.com/in/richard-tsai-4474994a/'
+        }
+      ]
     },
     {
       name: '黃海潮 Eric',
       title: '副理事長',
       background: '外商精品龍頭數據分析師，擅長AI工具實務應用',
       photo: 'assets/teams/Eric.webp',
-      website: 'https://www.seawave.tw',
-      linkedin: 'https://www.linkedin.com/in/seawave/'
+      photoLink: 'https://www.seawave.tw',
+      socials: [
+        {
+          type: 'linkedin',
+          url: 'https://www.linkedin.com/in/seawave/'
+        }
+      ]
     },
     {
       name: '廖文碩 Kevin',
       title: '秘書長',
       background: '快找整合顧問有限公司創辦人，專精於AI技術整合與企業轉型',
       photo: 'assets/teams/Kevin.webp',
-      website: 'https://kevin.voyage/',
-      linkedin: 'https://www.linkedin.com/in/sc-kevin/'
+      photoLink: 'https://kevin.voyage/',
+      socials: [
+        {
+          type: 'linkedin',
+          url: 'https://www.linkedin.com/in/sc-kevin/'
+        }
+      ]
     }
   ];
 
   // 業界顧問
-  industryAdvisors = [
+  industryAdvisors: Member[] = [
     {
       name: '韓諆璋 Jonathan',
       title: 'AI行銷講師',
       background: '密米爾行銷公司創辦人、知名平台線上課程講師',
       photo: 'assets/teams/韓諆璋.webp',
-      website: 'https://hahow.in/courses/5e586dc6c8bfb6002494c0d6',
-      linkedin: 'https://hahow.in/courses/5e586dc6c8bfb6002494c0d6'
+      photoLink: 'https://hahow.in/courses/5e586dc6c8bfb6002494c0d6',
+      socials: []
     },
     {
       name: '吳仁凱 Kevin',
       title: 'Python業師',
       background: '台積電工程師，擅長開發AI自動化工具與應用',
       photo: 'assets/teams/KevinWu.webp',
-      website: 'https://www.linkedin.com/in/%E4%BB%81%E5%87%B1-%E5%90%B3-bb234b13b/',
-      linkedin: 'https://www.linkedin.com/in/%E4%BB%81%E5%87%B1-%E5%90%B3-bb234b13b/'
+      socials: [
+        {
+          type: 'linkedin',
+          url: 'https://www.linkedin.com/in/%E4%BB%81%E5%87%B1-%E5%90%B3-bb234b13b/'
+        }
+      ]
     },
     {
       name: '陳建哲 Calvin',
       title: 'AI應用講師',
       background: '職業講師，專精於AI技術應用與實務操作',
       photo: 'assets/teams/Calvin.webp',
-      website: 'https://www.facebook.com/chen.jian.zhe.100892',
-      linkedin: 'https://www.facebook.com/chen.jian.zhe.100892'
+      socials: [
+        {
+          type: 'facebook',
+          url: 'https://www.facebook.com/chen.jian.zhe.100892'
+        }
+      ]
+    }
+  ];
+
+  // 學界顧問
+  academicAdvisors: Member[] = [
+    {
+      name: '侯昱安 Andy',
+      title: 'AI研究顧問',
+      background: '美國杜克大學工程博士生，推動AI技術於產業實務的應用與落地。',
+      photo: 'assets/teams/侯昱安.webp',
+      socials: [
+        {
+          type: 'linkedin',
+          url: 'https://www.linkedin.com/in/anhou0703'
+        }
+      ]
     }
   ];
 }

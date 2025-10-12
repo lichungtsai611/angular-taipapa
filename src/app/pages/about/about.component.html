@@ -17,21 +17,36 @@
         @for (member of managementMembers; track member.name) {
           <div class="team-card">
             <div class="member-photo">
-              <img [src]="member.photo" [alt]="member.name">
+              @if (member.photoLink) {
+                <a [href]="member.photoLink" target="_blank" rel="noopener" class="photo-link">
+                  <img [src]="member.photo" [alt]="member.name">
+                </a>
+              } @else {
+                <img [src]="member.photo" [alt]="member.name">
+              }
             </div>
             <div class="member-info">
               <h3>{{ member.name }}</h3>
               <h4>{{ member.title }}</h4>
               <p>{{ member.background }}</p>
               
-              <div class="member-social">
-                <a [href]="member.website" target="_blank" class="social-icon website" title="個人網站">
-                  <span class="material-icons">language</span>
-                </a>
-                <a [href]="member.linkedin" target="_blank" class="social-icon linkedin" title="LinkedIn">
-                  <span class="material-icons">work</span>
-                </a>
-              </div>
+              @if (member.socials.length) {
+                <div class="member-social">
+                  @for (social of member.socials; track social.url) {
+                    <a
+                      [href]="social.url"
+                      target="_blank"
+                      rel="noopener"
+                      [ngClass]="['social-icon', social.type]"
+                      [attr.title]="socialLabelMap[social.type] || '社群連結'">
+                      <img
+                        class="social-icon-img"
+                        [src]="socialIconAssets[social.type]"
+                        [alt]="socialLabelMap[social.type] || '社群連結'">
+                    </a>
+                  }
+                </div>
+              }
             </div>
           </div>
         }
@@ -52,21 +67,86 @@
         @for (member of industryAdvisors; track member.name) {
           <div class="team-card">
             <div class="member-photo">
-              <img [src]="member.photo" [alt]="member.name">
+              @if (member.photoLink) {
+                <a [href]="member.photoLink" target="_blank" rel="noopener" class="photo-link">
+                  <img [src]="member.photo" [alt]="member.name">
+                </a>
+              } @else {
+                <img [src]="member.photo" [alt]="member.name">
+              }
             </div>
             <div class="member-info">
               <h3>{{ member.name }}</h3>
               <h4>{{ member.title }}</h4>
               <p>{{ member.background }}</p>
               
-              <div class="member-social">
-                <a [href]="member.website" target="_blank" class="social-icon website" title="個人網站">
-                  <span class="material-icons">language</span>
+              @if (member.socials.length) {
+                <div class="member-social">
+                  @for (social of member.socials; track social.url) {
+                    <a
+                      [href]="social.url"
+                      target="_blank"
+                      rel="noopener"
+                      [ngClass]="['social-icon', social.type]"
+                      [attr.title]="socialLabelMap[social.type] || '社群連結'">
+                      <img
+                        class="social-icon-img"
+                        [src]="socialIconAssets[social.type]"
+                        [alt]="socialLabelMap[social.type] || '社群連結'">
+                    </a>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- 學界顧問 -->
+    <div class="team-container">
+      <div class="section-header">
+        <div class="header-icon">
+          <span class="material-icons">school</span>
+        </div>
+        <h2>學界顧問</h2>
+        <div class="header-underline"></div>
+      </div>
+
+      <div class="team-grid">
+        @for (member of academicAdvisors; track member.name) {
+          <div class="team-card">
+            <div class="member-photo">
+              @if (member.photoLink) {
+                <a [href]="member.photoLink" target="_blank" rel="noopener" class="photo-link">
+                  <img [src]="member.photo" [alt]="member.name">
                 </a>
-                <a [href]="member.linkedin" target="_blank" class="social-icon linkedin" title="LinkedIn">
-                  <span class="material-icons">work</span>
-                </a>
-              </div>
+              } @else {
+                <img [src]="member.photo" [alt]="member.name">
+              }
+            </div>
+            <div class="member-info">
+              <h3>{{ member.name }}</h3>
+              <h4>{{ member.title }}</h4>
+              <p>{{ member.background }}</p>
+
+              @if (member.socials.length) {
+                <div class="member-social">
+                  @for (social of member.socials; track social.url) {
+                    <a
+                      [href]="social.url"
+                      target="_blank"
+                      rel="noopener"
+                      [ngClass]="['social-icon', social.type]"
+                      [attr.title]="socialLabelMap[social.type] || '社群連結'">
+                      <img
+                        class="social-icon-img"
+                        [src]="socialIconAssets[social.type]"
+                        [alt]="socialLabelMap[social.type] || '社群連結'">
+                    </a>
+                  }
+                </div>
+              }
             </div>
           </div>
         }

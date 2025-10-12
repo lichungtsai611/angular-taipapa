@@ -548,13 +548,14 @@
       margin-top: 10px;
       
       .social-icon {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.08);
         text-decoration: none;
         transition: all 0.3s ease;
         
@@ -562,17 +563,10 @@
           transform: translateY(-5px);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         }
-        
-        &.website {
-          background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
-        }
-        
-        &.linkedin {
-          background: #0A66C2;
-        }
-        
-        .material-icons {
-          font-size: 20px;
+
+        .social-icon-img {
+          width: 22px;
+          height: 22px;
         }
       }
     }

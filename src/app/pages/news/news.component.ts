@@ -304,19 +304,30 @@ export class NewsComponent implements OnInit {
       description: [
         'Canva x AI - 自製專屬素材',
         'Canva x 範本 - 打造個人模板',
-        '視覺設計心法與案例演練',
-     ]
+        '視覺設計心法與案例演練'
+      ]
+    },
+    {
+      title: 'AI全方位應用:從日常到職場的智慧進化',
+      organization: '士林區戶政事務所',
+      date: '2025-10-20',
+      lecturer: '黃海潮老師',
+      description: [
+        '日常生活導入AI工具的實戰技巧',
+        '職場流程自動化與效率提升策略',
+        'AI時代必備的數位素養與風險意識'
+      ]
     },
     {
       title: 'Demo Day 生存指南：怎麼上台不怯場？',
       organization: '長庚科技大學',
-      date: '2025-10-20',
+      date: '2025-11-01',
       lecturer: '廖文碩老師',
       description: [
         'Canva x 簡報 - 資訊設計 SOP',
         'Canva x AI - 客製化視覺應用',
         '提案簡報邏輯與舞台表達技巧'
-     ]
+      ]
     },
     {
       title: 'Python 101',
@@ -349,6 +360,17 @@ export class NewsComponent implements OnInit {
         '日常生活中可落地的AI工具',
         '情境式應用與實例演練',
         '提升數位素養與效率'
+      ]
+    },
+    {
+      title: 'AI 時代: 做個不被淘汰的人才',
+      organization: '臺北市私立復興實驗高級中學',
+      date: '2025-12-01',
+      lecturer: '黃海潮老師',
+      description: [
+        '掌握AI驅動的產業趨勢與機會',
+        '打造跨域競爭力的學習與應用策略',
+        '規劃未來職涯的核心技能組合'
       ]
     }
   ];

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-type SocialType = 'website' | 'linkedin' | 'facebook';
+type SocialType = 'website' | 'linkedin' | 'facebook' | 'company';
 
 interface SocialLink {
   type: SocialType;
@@ -29,12 +29,14 @@ export class AboutComponent {
   socialIconAssets: Record<SocialType, string> = {
     website: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Globe_icon.svg',
     linkedin: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png',
-    facebook: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png'
+    facebook: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png',
+    company: 'https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/building-skyscraper.svg'
   };
   socialLabelMap: Record<SocialType, string> = {
     website: '個人網站',
     linkedin: 'LinkedIn',
-    facebook: 'Facebook'
+    facebook: 'Facebook',
+    company: '公司網站'
   };
   
   purpose = '本會旨在推廣人工智慧技術於台灣社會的實務應用，協助全民理解並運用AI工具，以提升生活品質與職場競爭力，促進數位轉型與全民科技素養。';
@@ -126,6 +128,19 @@ export class AboutComponent {
   // 業界顧問
   industryAdvisors: Member[] = [
     {
+      name: '張耿瑭 Charles',
+      title: '數位轉型顧問',
+      background: '言回有限公司創辦人',
+      photo: 'assets/teams/張耿瑭.webp',
+      photoLink: 'https://ckc.tw',
+      socials: [
+        {
+          type: 'company',
+          url: 'https://yenhui.co/service/'
+        }
+      ]
+    },
+    {
       name: '韓諆璋 Jonathan',
       title: 'AI行銷講師',
       background: '密米爾行銷公司創辦人、知名平台線上課程講師',
@@ -136,12 +151,24 @@ export class AboutComponent {
     {
       name: '吳仁凱 Kevin',
       title: 'Python業師',
-      background: '台積電工程師，擅長開發AI自動化工具與應用',
+      background: '台灣半導體龍頭企業工程師，擅長開發AI自動化工具與應用',
       photo: 'assets/teams/KevinWu.webp',
       socials: [
         {
           type: 'linkedin',
           url: 'https://www.linkedin.com/in/%E4%BB%81%E5%87%B1-%E5%90%B3-bb234b13b/'
+        }
+      ]
+    },
+    {
+      name: '郭晏廷 Andy',
+      title: '快消業AI應用業師',
+      background: '外商 FMCG 產品供應經理，擅長AI技術應用於職場環境',
+      photo: 'assets/teams/郭晏廷.webp',
+      socials: [
+        {
+          type: 'linkedin',
+          url: 'https://www.linkedin.com/in/andy-kuo-95a5b2195/'
         }
       ]
     },

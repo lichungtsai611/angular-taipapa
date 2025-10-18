@@ -141,12 +141,49 @@ export class AboutComponent {
       ]
     },
     {
+      name: '洪振倫 Kevin',
+      title: 'AI 數據應用業師',
+      background: '現職數據工程師，專注於 AI 應用開發、流程整合',
+      photo: 'assets/teams/洪振倫.webp',
+      socials: [
+        {
+          type: 'linkedin',
+          url: 'https://www.linkedin.com/in/zhen-lun-hong'
+        }
+      ]
+    },
+    {
+      name: '高孟暉 Max',
+      title: 'AI應用程式顧問',
+      background: '外商軟體工程師，專注於大規模應用開發與AI應用實踐',
+      photo: 'assets/teams/高孟暉.webp',
+      socials: [
+        {
+          type: 'linkedin',
+          url: 'https://www.linkedin.com/in/menghueigao/'
+        }
+      ]
+    },
+
+    {
       name: '韓諆璋 Jonathan',
       title: 'AI行銷講師',
       background: '密米爾行銷公司創辦人、知名平台線上課程講師',
       photo: 'assets/teams/韓諆璋.webp',
       photoLink: 'https://hahow.in/courses/5e586dc6c8bfb6002494c0d6',
       socials: []
+    },
+    {
+      name: '蔡宜軒 Sandy',
+      title: 'AI 數據應用業師',
+      background: '金融業數據分析師，專注於AI輔助應用分析',
+      photo: 'assets/teams/蔡宜軒.webp',
+      socials: [
+        {
+          type: 'linkedin',
+          url: 'https://www.linkedin.com/in/yi-hsuan-tsai/'
+        }
+      ]
     },
     {
       name: '吳仁凱 Kevin',

@@ -74,6 +74,40 @@
   animation: fadeIn 0.8s ease-out;
 }
 
+.industry-filter-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.industry-filter-chip {
+  background: white;
+  border: 1px solid rgba(var(--primary-blue-rgb), 0.25);
+  color: var(--primary-blue);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba(var(--primary-blue-rgb), 0.5);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  &.active {
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(var(--primary-blue-rgb), 0.3);
+  }
+}
+
 /* 區塊標題通用樣式 */
 .section-header {
   text-align: center;
@@ -478,6 +512,11 @@
   animation-fill-mode: both;
   padding: 30px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
   
   &:hover {
     transform: translateY(-8px);
@@ -506,25 +545,30 @@
   .member-info {
     padding: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
     
     h3 {
       font-size: 1.4rem;
       font-weight: 600;
       color: var(--dark-blue);
-      margin-bottom: 5px;
+      margin: 0;
     }
     
     h4 {
       font-size: 1.1rem;
       color: var(--primary-blue);
       font-weight: 500;
-      margin-bottom: 15px;
       position: relative;
+      margin: 0;
+      padding-bottom: 18px;
       
       &:after {
         content: '';
         position: absolute;
-        bottom: -8px;
+        bottom: 0;
         left: 50%;
         transform: translateX(-50%);
         width: 40px;
@@ -534,18 +578,31 @@
       }
     }
     
+    .industry-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(var(--accent-green-rgb), 0.15);
+      color: var(--accent-green);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
     p {
       color: var(--gray-700);
       font-size: 1rem;
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin: 0;
     }
     
     .member-social {
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin-top: 10px;
+      margin-top: 8px;
       
       .social-icon {
         width: 44px;

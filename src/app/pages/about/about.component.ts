@@ -8,12 +8,20 @@ interface SocialLink {
   url: string;
 }
 
+type Industry =
+  | '金融業'
+  | '科技業'
+  | '媒體業'
+  | '快消業'
+  | '數位遊牧';
+
 interface Member {
   name: string;
   title: string;
   background: string;
   photo: string;
   photoLink?: string;
+  industry?: Industry;
   socials: SocialLink[];
 }
 
@@ -81,7 +89,7 @@ export class AboutComponent {
       icon: 'lightbulb'
     }
   ];
-  
+
   // 管理成員
   managementMembers: Member[] = [
     {
@@ -126,6 +134,17 @@ export class AboutComponent {
   ];
 
   // 業界顧問
+  industryFilters: Array<{ label: string; value: Industry | 'all' }> = [
+    { label: '全部', value: 'all' },
+    { label: '金融業', value: '金融業' },
+    { label: '科技業', value: '科技業' },
+    { label: '媒體業', value: '媒體業' },
+    { label: '快消業', value: '快消業' },
+    { label: '數位遊牧', value: '數位遊牧' }
+  ];
+
+  selectedIndustryFilter: Industry | 'all' = 'all';
+
   industryAdvisors: Member[] = [
     {
       name: '張耿瑭 Charles',
@@ -133,6 +152,7 @@ export class AboutComponent {
       background: '言回有限公司創辦人',
       photo: 'assets/teams/張耿瑭.webp',
       photoLink: 'https://ckc.tw',
+      industry: '數位遊牧',
       socials: [
         {
           type: 'company',
@@ -145,6 +165,7 @@ export class AboutComponent {
       title: 'AI 數據應用業師',
       background: '現職數據工程師，專注於 AI 應用開發、流程整合',
       photo: 'assets/teams/洪振倫.webp',
+      industry: '媒體業',
       socials: [
         {
           type: 'linkedin',
@@ -157,6 +178,7 @@ export class AboutComponent {
       title: 'AI應用程式顧問',
       background: '外商軟體工程師，專注於大規模應用開發與AI應用實踐',
       photo: 'assets/teams/高孟暉.webp',
+      industry: '科技業',
       socials: [
         {
           type: 'linkedin',
@@ -171,6 +193,7 @@ export class AboutComponent {
       background: '密米爾行銷公司創辦人、知名平台線上課程講師',
       photo: 'assets/teams/韓諆璋.webp',
       photoLink: 'https://hahow.in/courses/5e586dc6c8bfb6002494c0d6',
+      industry: '數位遊牧',
       socials: []
     },
     {
@@ -178,6 +201,7 @@ export class AboutComponent {
       title: 'AI 數據應用業師',
       background: '金融業數據分析師，專注於AI輔助應用分析',
       photo: 'assets/teams/蔡宜軒.webp',
+      industry: '金融業',
       socials: [
         {
           type: 'linkedin',
@@ -190,6 +214,7 @@ export class AboutComponent {
       title: 'Python業師',
       background: '台灣半導體龍頭企業工程師，擅長開發AI自動化工具與應用',
       photo: 'assets/teams/KevinWu.webp',
+      industry: '科技業',
       socials: [
         {
           type: 'linkedin',
@@ -202,6 +227,7 @@ export class AboutComponent {
       title: '快消業AI應用業師',
       background: '外商 FMCG 產品供應經理，擅長AI技術應用於職場環境',
       photo: 'assets/teams/郭晏廷.webp',
+      industry: '快消業',
       socials: [
         {
           type: 'linkedin',
@@ -214,6 +240,7 @@ export class AboutComponent {
       title: 'AI應用講師',
       background: '職業講師，專精於AI技術應用與實務操作',
       photo: 'assets/teams/Calvin.webp',
+      industry: '數位遊牧',
       socials: [
         {
           type: 'facebook',
@@ -222,6 +249,19 @@ export class AboutComponent {
       ]
     }
   ];
+
+  get filteredIndustryAdvisors(): Member[] {
+    if (this.selectedIndustryFilter === 'all') {
+      return this.industryAdvisors;
+    }
+    return this.industryAdvisors.filter(
+      (advisor) => advisor.industry === this.selectedIndustryFilter
+    );
+  }
+
+  setIndustryFilter(filter: Industry | 'all'): void {
+    this.selectedIndustryFilter = filter;
+  }
 
   // 學界顧問
   academicAdvisors: Member[] = [

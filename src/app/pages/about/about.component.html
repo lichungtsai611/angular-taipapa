@@ -63,8 +63,20 @@
         <div class="header-underline"></div>
       </div>
       
+      <div class="industry-filter-bar">
+        @for (filter of industryFilters; track filter.value) {
+          <button
+            type="button"
+            class="industry-filter-chip"
+            [ngClass]="{ active: selectedIndustryFilter === filter.value }"
+            (click)="setIndustryFilter(filter.value)">
+            {{ filter.label }}
+          </button>
+        }
+      </div>
+
       <div class="team-grid">
-        @for (member of industryAdvisors; track member.name) {
+        @for (member of filteredIndustryAdvisors; track member.name) {
           <div class="team-card">
             <div class="member-photo">
               @if (member.photoLink) {
@@ -78,6 +90,9 @@
             <div class="member-info">
               <h3>{{ member.name }}</h3>
               <h4>{{ member.title }}</h4>
+              @if (member.industry) {
+                <span class="industry-badge">{{ member.industry }}</span>
+              }
               <p>{{ member.background }}</p>
               
               @if (member.socials.length) {

@@ -133,12 +133,12 @@ export class HomeComponent implements OnInit {
     {
       name: '蔡立忠',
       title: '理事長',
-      photo: 'assets/teams/Richard.webp'
+      photo: 'assets/teams/蔡立忠.webp'
     },
     {
       name: '黃海潮',
       title: '副理事長',
-      photo: 'assets/teams/Eric.webp'
+      photo: 'assets/teams/黃海潮.webp'
     }
   ];
   

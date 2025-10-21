@@ -381,17 +381,17 @@ export class NewsComponent implements OnInit {
 
   getLecturerPhoto(lecturerName: string): string {
     if (lecturerName.includes('蔡立忠')) {
-      return 'assets/teams/Richard.webp';
+      return 'assets/teams/蔡立忠.webp';
     } else if (lecturerName.includes('黃海潮')) {
-      return 'assets/teams/Eric.webp';
+      return 'assets/teams/黃海潮.webp';
     }else if (lecturerName.includes('廖文碩')) {
-      return 'assets/teams/Kevin.webp';
+      return 'assets/teams/廖文碩.webp';
     }else if (lecturerName.includes('韓諆璋')) {
       return 'assets/teams/韓諆璋.webp';
     }else if (lecturerName.includes('吳仁凱')) {
-      return 'assets/teams/KevinWu.webp';
+      return 'assets/teams/吳仁凱.webp';
     }else if (lecturerName.includes('陳建哲')) {
-      return 'assets/teams/Calvin.webp';
+      return 'assets/teams/陳建哲.webp';
     }
     return 'assets/teams/default.webp'; // fallback
   }

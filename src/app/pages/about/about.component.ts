@@ -96,7 +96,7 @@ export class AboutComponent {
       name: '蔡立忠 Richard',
       title: '負責人、理事長',
       background: '外商資深數據工程師，專注AI技術開發、整合',
-      photo: 'assets/teams/Richard.webp',
+      photo: 'assets/teams/蔡立忠.webp',
       photoLink: 'https://www.richard-info.com',
       socials: [
         {
@@ -109,7 +109,7 @@ export class AboutComponent {
       name: '黃海潮 Eric',
       title: '副理事長',
       background: '外商精品龍頭數據分析師，擅長AI工具實務應用',
-      photo: 'assets/teams/Eric.webp',
+      photo: 'assets/teams/黃海潮.webp',
       photoLink: 'https://www.seawave.tw',
       socials: [
         {
@@ -122,7 +122,7 @@ export class AboutComponent {
       name: '廖文碩 Kevin',
       title: '秘書長',
       background: '快找整合顧問有限公司創辦人，專精於AI技術整合與企業轉型',
-      photo: 'assets/teams/Kevin.webp',
+      photo: 'assets/teams/廖文碩.webp',
       photoLink: 'https://kevin.voyage/',
       socials: [
         {
@@ -213,7 +213,7 @@ export class AboutComponent {
       name: '吳仁凱 Kevin',
       title: 'Python業師',
       background: '台灣半導體龍頭企業工程師，擅長開發AI自動化工具與應用',
-      photo: 'assets/teams/KevinWu.webp',
+      photo: 'assets/teams/吳仁凱.webp',
       industry: '科技業',
       socials: [
         {
@@ -239,7 +239,7 @@ export class AboutComponent {
       name: '陳建哲 Calvin',
       title: 'AI應用講師',
       background: '職業講師，專精於AI技術應用與實務操作',
-      photo: 'assets/teams/Calvin.webp',
+      photo: 'assets/teams/陳建哲.webp',
       industry: '數位遊牧',
       socials: [
         {
